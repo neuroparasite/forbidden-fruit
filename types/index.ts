@@ -1,5 +1,6 @@
 export interface State {
   currentTopic: string;
+  currentResourceType: string;
 
   tags: Tag[];
   devilsAdvocates: DevilsAdvocate[];
@@ -54,3 +55,37 @@ export interface Topic {
   studyIds: number[];
   videoIds: number[];
 }
+
+export const topics = [
+  {
+    id: "0",
+    name: "gender",
+  },
+  {
+    id: "1",
+    name: "biology",
+  },
+];
+
+export const resourceTypes = [
+  {
+    id: "0",
+    name: "articles",
+  },
+  {
+    id: "1",
+    name: "audio",
+  },
+  {
+    id: "2",
+    name: "literature",
+  },
+  {
+    id: "3",
+    name: "studies",
+  },
+  {
+    id: "4",
+    name: "videos",
+  },
+];

@@ -9,20 +9,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { topics } from "~/types";
 
 export default Vue.extend({
   data() {
     return {
-      topics: [
-        {
-          id: "0",
-          name: "gender"
-        },
-        {
-          id: "1",
-          name: "biology"
-        }
-      ]
+      topics: topics
     };
   },
   methods: {

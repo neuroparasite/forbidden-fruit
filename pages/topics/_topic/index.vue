@@ -1,37 +1,19 @@
 <template>
   <div>
     <h1>{{ topic.name }}</h1>
-    <div v-for="resourceType in resourceTypes" :key="resourceType.id">
-      <nuxt-link :to="`/topics/${topic.name}/${resourceType.name}`">{{ resourceType.name }}</nuxt-link>
-    </div>
+    <nuxt-link
+      v-for="resourceType in resourceTypes"
+      :key="resourceType.id"
+      :to="`/topics/${topic.name}/${resourceType.name}`"
+    >
+      <div v-on:click="setCurrentResourceType(resourceType.name)">{{ resourceType.name }}</div>
+    </nuxt-link>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-
-const resourceTypes = [
-  {
-    id: "0",
-    name: "articles"
-  },
-  {
-    id: "1",
-    name: "audio"
-  },
-  {
-    id: "2",
-    name: "literature"
-  },
-  {
-    id: "3",
-    name: "studies"
-  },
-  {
-    id: "4",
-    name: "videos"
-  }
-];
+import { resourceTypes } from "~/types";
 
 export default Vue.extend({
   data() {
@@ -39,6 +21,11 @@ export default Vue.extend({
       resourceTypes: resourceTypes
     };
   },
-  props: ["topic"]
+  props: ["topic"],
+  methods: {
+    setCurrentResourceType(resourceType: string) {
+      this.$store.commit("setCurrentResourceType", resourceType);
+    }
+  }
 });
 </script>

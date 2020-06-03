@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import Vue from "vue";
-
 const topics = [
   {
     id: "0",
