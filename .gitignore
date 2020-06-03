@@ -1,1 +1,5 @@
 node_modules
+
+.vercel
+.nuxt
+.DS_Store

@@ -1,4 +1,10 @@
 export default {
+  env: {
+    baseURL:
+      process.env.NODE_ENV === "production"
+        ? "https://forbidden-fruit.now.sh"
+        : "http://localhost:3000",
+  },
   mode: "spa",
   /*
    ** Headers of the page
@@ -14,7 +20,14 @@ export default {
         content: process.env.npm_package_description || "",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap",
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -23,7 +36,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/css/components.css"],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/custom.css"],
   /*
    ** Plugins to load before mounting the App
    */
@@ -39,7 +52,11 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend: function(config, { isDev, isClient }) {
+      config.node = {
+        fs: "empty",
+      };
+    },
   },
   buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
   axios: {

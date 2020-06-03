@@ -1,0 +1,9 @@
+[
+  {
+    "id": 0,
+    "name": "resource",
+    "description": "description",
+    "source": "https://example.com",
+    "tagIds": [0]
+  }
+]

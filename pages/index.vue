@@ -1,80 +1,41 @@
 <template>
   <div class="container">
-    <nuxt-link to="/topics/gender">gender</nuxt-link>
-    <nuxt-link to="/topics/gender">gender</nuxt-link>
+    <nuxt-link to="/topics">topics</nuxt-link>
 
-    <div>
-      <logo />
-      <h1 class="title">nuxtjs</h1>
-      <h2 class="subtitle">My astonishing Nuxt.js project</h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
-
-    <div>{{ message }}</div>
+    <div class="underline">{{ this.$store.state.devilsAdvocates }}</div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import fs from "fs";
 import Logo from "~/components/Logo.vue";
 import { Tag } from "~/types";
+import tags from "~/static/data/tags.json";
 
 export default Vue.extend({
   components: {
-    Logo,
+    Logo
   },
   data() {
     return {
-      message: "hello",
+      message: "hello"
     };
-  },
-  asyncData({ params, $axios }) {
-    return $axios.$get(`/api/tags`).then((res) => {
-      return { message: res.data };
-    });
-  },
+  }
+  // asyncData({ params }) {
+  //   // let tags: Tag[] = [];
+  //   // if (process.server) {
+  //   //   tags = JSON.parse(fs.readFileSync("~/static/tags.json", "utf8"));
+  //   // }
+
+  //   return { message: tags };
+  // },
+  // validate({ params }) {
+  //   // Must be a number
+  //   return /^\d+$/.test(params.id);
+  // }
 });
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
