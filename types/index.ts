@@ -25,7 +25,7 @@ export interface DevilsAdvocate {
   background: string;
   resourceIds: number[];
   topResourceIds: number[];
-  referenceLink: string;
+  homepage: string;
   imageLink: string;
 }
 
@@ -56,14 +56,34 @@ export interface Topic {
   videoIds: number[];
 }
 
+export enum topicsEnum {
+  GENDER = "gender",
+  BIOLOGY = "biology",
+  RELIGION = "religion",
+  DIVERSITY = "diversity",
+  NWO = "new-world-order",
+}
+
 export const topics = [
   {
     id: "0",
-    name: "gender",
+    name: topicsEnum.GENDER,
   },
   {
     id: "1",
-    name: "biology",
+    name: topicsEnum.BIOLOGY,
+  },
+  {
+    id: "2",
+    name: topicsEnum.RELIGION,
+  },
+  {
+    id: "3",
+    name: topicsEnum.DIVERSITY,
+  },
+  {
+    id: "4",
+    name: topicsEnum.NWO,
   },
 ];
 
