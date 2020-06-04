@@ -1,7 +1,14 @@
 <template>
   <div class="container">
-    <nuxt-link to="/topics">topics</nuxt-link>
-
+    <nuxt-link to="/topics">
+      {{ $t("topics.title") }}
+    </nuxt-link>
+    <nuxt-link to="/devils_advocates">{{
+      $t("devilsAdvocates.title")
+    }}</nuxt-link>
+    <nuxt-link to="/external_resources">{{
+      $t("externalResources.title")
+    }}</nuxt-link>
     <div class="underline">{{ this.$store.state.devilsAdvocates }}</div>
   </div>
 </template>
@@ -15,27 +22,9 @@ import tags from "~/static/data/tags.json";
 
 export default Vue.extend({
   components: {
-    Logo
+    Logo,
   },
-  data() {
-    return {
-      message: "hello"
-    };
-  }
-  // asyncData({ params }) {
-  //   // let tags: Tag[] = [];
-  //   // if (process.server) {
-  //   //   tags = JSON.parse(fs.readFileSync("~/static/tags.json", "utf8"));
-  //   // }
-
-  //   return { message: tags };
-  // },
-  // validate({ params }) {
-  //   // Must be a number
-  //   return /^\d+$/.test(params.id);
-  // }
 });
 </script>
 
-<style>
-</style>
+<style></style>

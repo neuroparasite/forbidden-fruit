@@ -44,7 +44,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "nuxt-i18n"],
   /*
    ** Build configuration
    */
@@ -61,5 +61,30 @@ export default {
   buildModules: ["@nuxtjs/tailwindcss", "@nuxt/typescript-build"],
   axios: {
     // proxyHeaders: false
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: {
+        en: {
+          topics: {
+            title: "Topics",
+            gender: "Gender",
+            biology: "Biology",
+            religion: "Religion",
+            diversity: "Diversity",
+            nwo: "New World Order",
+          },
+          devilsAdvocates: {
+            title: "Devil's Advocates",
+          },
+          externalResources: {
+            title: "External Resources",
+          },
+        },
+      },
+    },
   },
 };
