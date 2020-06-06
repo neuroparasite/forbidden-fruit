@@ -18,7 +18,7 @@ const HomeButton = Vue.extend({
   },
   methods: {
     navigateHome() {
-      window.location.href = "/";
+      this.$router.push("/");
     }
   }
 });

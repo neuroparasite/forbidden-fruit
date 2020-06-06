@@ -21,7 +21,7 @@ const BackLink = Vue.extend({
   },
   methods: {
     navigateTo() {
-      window.location.href = this.link;
+      this.$router.push(this.link);
     }
   }
 });
