@@ -3,8 +3,8 @@
     <div class="flex flex-col" :class="{ 'mr-32': goToTop }">
       <div class="font-black text-32">{{ $t(title) }}</div>
       <div v-if="subtitle" class="flex">
-        <div>{{ $t(subtitle) }}</div>
-        <div v-if="subsubtitle">{{ $t(subsubtitle) }}</div>
+        <div class="text-24 mr-20">{{ $t(subtitle) }}</div>
+        <div v-if="subsubtitle" class="text-12">{{ $t(subsubtitle) }}</div>
       </div>
     </div>
 
