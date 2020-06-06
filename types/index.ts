@@ -56,34 +56,31 @@ export interface Topic {
   videoIds: number[];
 }
 
-export enum topicsEnum {
-  GENDER = "gender",
-  BIOLOGY = "biology",
-  RELIGION = "religion",
-  DIVERSITY = "diversity",
-  NWO = "new-world-order",
-}
-
 export const topics = [
   {
     id: "0",
-    name: topicsEnum.GENDER,
+    name: "gender",
+    label: "topics.gender",
   },
   {
     id: "1",
-    name: topicsEnum.BIOLOGY,
+    name: "biology",
+    label: "topics.biology",
   },
   {
     id: "2",
-    name: topicsEnum.RELIGION,
+    name: "religion",
+    label: "topics.religion",
   },
   {
     id: "3",
-    name: topicsEnum.DIVERSITY,
+    name: "diversity",
+    label: "topics.diversity",
   },
   {
     id: "4",
-    name: topicsEnum.NWO,
+    name: "new-world-order",
+    label: "topics.nwo",
   },
 ];
 
