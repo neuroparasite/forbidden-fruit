@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24 ml-24 flex z-50">
+  <div class="pt-24 pl-24 flex z-50">
     <button @click="navigateHome()" class="p-12">
       <Icon class="h-24 w-24" type="home" />
     </button>
