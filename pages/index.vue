@@ -10,7 +10,7 @@
       <div
         class="flex items-center justify-center mt-128 text-24 text-secondary font-black tracking-tighter leading-none w-fruit h-fruit rounded-full bg-secondary"
       >
-        <nuxt-link class="w-fruitText" to="/discover">{{ $t("home.discover") }}</nuxt-link>
+        <nuxt-link class="w-fruitText underline" to="/discover">{{ $t("home.discover") }}</nuxt-link>
       </div>
 
       <transition name="fade">
