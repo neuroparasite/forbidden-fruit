@@ -1,9 +1,20 @@
 module.exports = {
   theme: {
     extend: {
-      height: {},
-      width: {},
-      inset: {},
+      height: {
+        screen: "100vh",
+        fruit: "12.5rem",
+        circleLarge: "26.25rem",
+      },
+      width: {
+        screen: "100vw",
+        fruit: "12.5rem",
+        fruitText: "7.5rem",
+        circleLarge: "26.25rem",
+      },
+      inset: {
+        "20": "1.25rem",
+      },
       minHeight: {},
       maxHeight: {},
       minWidth: {},
@@ -12,8 +23,16 @@ module.exports = {
         nice: "1.5rem 1.5rem 2.5rem -1rem",
       },
     },
-    colors: {},
+    colors: {
+      primary: "#f2f2f2",
+      secondary: "#161616",
+    },
+    backgroundColor: {
+      primary: "#161616",
+      secondary: "#f2f2f2",
+    },
     fontSize: {
+      "10": "0.625rem",
       "12": "0.75rem",
       "16": "1rem",
       "18": "1.125rem",
@@ -36,11 +55,14 @@ module.exports = {
       thin: 300,
       regular: 400,
       bold: 700,
+      black: 900,
     },
     spacing: {
       "0": "0px",
       "4": "0.25rem",
       "8": "0.5rem",
+      "10": "0.625rem",
+      "12": "0.75rem",
       "16": "1rem",
       "20": "1.25rem",
       "24": "1.5rem",
@@ -60,6 +82,7 @@ module.exports = {
     },
     borderWidth: {
       "1": "1px",
+      "3": "3px",
     },
   },
   variants: {
