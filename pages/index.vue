@@ -1,5 +1,14 @@
 <template>
   <div class="overflow-x-hidden">
+    <!-- Arm -->
+    <img
+      class="absolute pointer-events-none"
+      width="360"
+      height="411"
+      src="~/static/img/arm_angle.png"
+      alt
+    />
+
     <!-- Home -->
     <div class="flex flex-col items-center text-center h-screen">
       <div class="mt-56 mx-64">
@@ -87,5 +96,16 @@ export default Vue.extend({
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.slide-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-enter
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(100px);
 }
 </style>
