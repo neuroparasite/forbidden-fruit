@@ -13,10 +13,12 @@
         <nuxt-link class="w-fruitText" to="/discover">{{ $t("home.discover") }}</nuxt-link>
       </div>
 
-      <div class="flex flex-col items-center absolute bottom-20">
-        <div class="text-12 mb-8">{{ $t("scroll.down") }}</div>
-        <Icon class="h-24 w-24" type="arrowDown" />
-      </div>
+      <transition name="fade">
+        <div v-if="!scrolled" class="flex flex-col items-center absolute bottom-20">
+          <div class="text-12 mb-8">{{ $t("scroll.down") }}</div>
+          <Icon class="h-24 w-24" type="arrowDown" />
+        </div>
+      </transition>
     </div>
 
     <!-- Info -->
@@ -59,10 +61,31 @@ export default Vue.extend({
         "info.listPoints.resources",
         "info.listPoints.individuals",
         "info.listPoints.knowledge"
-      ]
+      ],
+      scrolled: false
     };
+  },
+
+  methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 20;
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 });
 </script>
 
-<style></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
