@@ -82,7 +82,7 @@ export default {
           info: {
             description:
               "Take refuge in this desolate place of reason, science, facts, and forbidden thoughts.",
-            listText: "Enjoy a curated collection of:",
+            listText: "Enjoy a curated collection of",
             listPoints: {
               resources:
                 "thought-provoking resources about politically-incorrect topics",
@@ -107,6 +107,7 @@ export default {
           scroll: {
             down: "Scroll Down",
           },
+          paypal: "paypal.me/xxx",
         },
       },
     },
