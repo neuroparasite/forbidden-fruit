@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="overflow-x-hidden">
+    <!-- Home -->
     <div class="flex flex-col items-center text-center h-screen">
       <div class="mt-56 mx-64">
         <div class="text-12 mb-12">{{ $t("home.quote") }}</div>
@@ -18,13 +19,24 @@
       </div>
     </div>
 
+    <!-- Info -->
     <div class="flex flex-col items-center justify-center h-screen">
       <div
         class="flex flex-col items-center justify-center h-circleLarge w-circleLarge border-3 border-primary border-solid rounded-full"
       >
-        <div class="flex flex-col px-48">
-          <div>{{ $t("info.description")}}</div>
+        <div class="flex flex-col px-64">
+          <div class="mb-24">{{ $t("info.description")}}</div>
+
+          <List :text="listText" :points="listPoints" />
         </div>
+      </div>
+    </div>
+
+    <!-- Support Me -->
+    <div class="flex flex-col items-center justify-center h-screen">
+      <div class="flex items-center">
+        <Icon class="h-32 w-32 mr-12" type="paypal" />
+        <a href="https://paypal.me/xxx" class="underline">{{ $t("paypal") }}</a>
       </div>
     </div>
   </div>
@@ -33,10 +45,22 @@
 <script lang="ts">
 import Vue from "vue";
 import Icon from "~/components/Icon.vue";
+import List from "~/components/List.vue";
 
 export default Vue.extend({
   components: {
-    Icon
+    Icon,
+    List
+  },
+  data() {
+    return {
+      listText: "info.listText",
+      listPoints: [
+        "info.listPoints.resources",
+        "info.listPoints.individuals",
+        "info.listPoints.knowledge"
+      ]
+    };
   }
 });
 </script>
