@@ -108,6 +108,10 @@ export default {
             down: "Scroll Down",
           },
           paypal: "paypal.me/xxx",
+          ui: {
+            back: "Back",
+            goToTop: "Go To Top",
+          },
         },
       },
     },
