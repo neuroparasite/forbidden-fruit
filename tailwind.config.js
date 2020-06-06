@@ -14,6 +14,8 @@ module.exports = {
       },
       inset: {
         "20": "1.25rem",
+        "24": "1.5rem",
+        "32": "2rem",
       },
       minHeight: {},
       maxHeight: {},
