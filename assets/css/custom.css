@@ -10,6 +10,8 @@ html {
   @apply font-regular;
   @apply bg-primary;
   @apply text-primary;
+  @apply tracking-tight;
+  @apply leading-tight;
 }
 
 *,
