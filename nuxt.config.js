@@ -13,7 +13,11 @@ export default {
     title: process.env.npm_package_name || "",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+      },
       {
         hid: "description",
         name: "description",
@@ -25,7 +29,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap",
+          "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
       },
     ],
   },
@@ -69,6 +73,23 @@ export default {
       fallbackLocale: "en",
       messages: {
         en: {
+          home: {
+            quote:
+              "“Give me the storm and tempest of thought and action, rather than the dead calm of ignorance and faith”",
+            quoteSource: "Robert G. Ingersoll",
+            discover: "TAKE THE FRUIT",
+          },
+          info: {
+            description:
+              "Take refuge in this desolate place of reason, science, facts, and forbidden thoughts.",
+            listText: "Enjoy a curated collection of:",
+            listPoints: {
+              resources:
+                "thought-provoking resources about politically-incorrect topics",
+              individuals: "awe-inspiring individuals",
+              knowledge: "links to places of knowledge",
+            },
+          },
           topics: {
             title: "Topics",
             gender: "Gender",
@@ -82,6 +103,9 @@ export default {
           },
           externalResources: {
             title: "External Resources",
+          },
+          scroll: {
+            down: "Scroll Down",
           },
         },
       },
