@@ -11,7 +11,7 @@
         <Link
           v-for="topic in topics"
           :key="topic.id"
-          :link="topic.name"
+          :link="'/topics/' + topic.name"
           :label="topic.label"
           class="mb-32 last:mb-0"
         />
