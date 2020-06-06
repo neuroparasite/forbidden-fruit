@@ -35,12 +35,12 @@
     </div>
 
     <!-- Support Me -->
-    <div class="flex flex-col items-center justify-center h-screen">
+    <!-- <div class="flex flex-col items-center justify-center h-screen">
       <div class="flex items-center">
         <Icon class="h-32 w-32 mr-12" type="paypal" />
         <a href="https://paypal.me/xxx" class="underline">{{ $t("paypal") }}</a>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
