@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center">
+  <button @click="navigateTo()" class="flex items-center">
     <Icon class="h-24 w-24 mr-12" type="link" />
-    <nuxt-link :to="link">{{ $t(label) }}</nuxt-link>
-  </div>
+    <div>{{ $t(label) }}</div>
+  </button>
 </template>
 
 <script lang="ts">
@@ -21,6 +21,11 @@ const Link = Vue.extend({
     label: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    navigateTo() {
+      this.$router.push(this.link);
     }
   }
 });
