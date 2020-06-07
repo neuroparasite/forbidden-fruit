@@ -1,5 +1,9 @@
 <template>
-  <button @click="navigateTo()" class="flex items-center">
+  <button
+    @click="navigateTo()"
+    class="flex items-center"
+    :class="{ 'text-disabled': disabled, 'pointer-events-none': disabled }"
+  >
     <Icon class="h-24 w-24 mr-12" type="link" />
     <div class="underline">{{ $t(label) }}</div>
   </button>
@@ -21,6 +25,11 @@ const Link = Vue.extend({
     label: {
       type: String,
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   methods: {

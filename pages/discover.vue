@@ -9,6 +9,7 @@
           :key="link.link"
           :link="link.link"
           :label="link.label"
+          :disabled="link.disabled"
           class="mb-32 last:mb-0"
         />
       </div>
@@ -31,15 +32,18 @@ export default Vue.extend({
       links: [
         {
           link: "/topics",
-          label: "topics.title"
+          label: "topics.title",
+          disabled: false
         },
         {
           link: "/devils_advocates",
-          label: "devilsAdvocates.title"
+          label: "devilsAdvocates.title",
+          disabled: true
         },
         {
           link: "/external_resources",
-          label: "externalResources.title"
+          label: "externalResources.title",
+          disabled: true
         }
       ]
     };

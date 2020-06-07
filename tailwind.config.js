@@ -28,6 +28,7 @@ module.exports = {
     colors: {
       primary: "#f2f2f2",
       secondary: "#2d2d2d",
+      disabled: "#4f4f4f",
     },
     backgroundColor: {
       primary: "#2d2d2d",
