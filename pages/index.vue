@@ -2,7 +2,7 @@
   <div class="overflow-x-hidden">
     <!-- Arm -->
     <img
-      class="absolute pointer-events-none"
+      class="absolute pointer-events-none mt-64"
       width="360"
       height="411"
       src="~/static/img/arm_angle.png"
@@ -12,8 +12,8 @@
     <!-- Home -->
     <div class="flex flex-col items-center text-center h-screen">
       <div class="mt-56 mx-64">
-        <div class="text-12 mb-12">{{ $t("home.quote") }}</div>
-        <div class="text-10">{{ $t("home.quoteSource") }}</div>
+        <div class="text-16 mb-12">{{ $t("home.quote") }}</div>
+        <div class="text-12">{{ $t("home.quoteSource") }}</div>
       </div>
 
       <div
@@ -22,18 +22,13 @@
         <nuxt-link class="w-fruitText underline" to="/discover">{{ $t("home.discover") }}</nuxt-link>
       </div>
 
-      <transition name="fade">
-        <div v-if="!scrolled" class="flex flex-col items-center absolute bottom-20">
-          <div class="text-12 mb-8">{{ $t("scroll.down") }}</div>
-          <Icon class="h-24 w-24" type="arrowDown" />
-        </div>
-      </transition>
+      <ScrollDownIndicator />
     </div>
 
     <!-- Info -->
-    <div class="flex flex-col items-center justify-center h-screen">
+    <div class="flex flex-col items-center justify-center h-screen text-secondary">
       <div
-        class="flex flex-col items-center justify-center h-circleLarge w-circleLarge border-3 border-primary border-solid rounded-full"
+        class="flex flex-col items-center justify-center h-circleLarge w-circleLarge border-3 border-primary border-solid rounded-full bg-secondary"
       >
         <div class="flex flex-col px-64">
           <div class="mb-24">{{ $t("info.description")}}</div>
@@ -57,11 +52,13 @@
 import Vue from "vue";
 import Icon from "~/components/Icon.vue";
 import List from "~/components/List.vue";
+import ScrollDownIndicator from "~/components/ScrollDownIndicator.vue";
 
 export default Vue.extend({
   components: {
     Icon,
-    List
+    List,
+    ScrollDownIndicator
   },
   data() {
     return {
@@ -70,42 +67,11 @@ export default Vue.extend({
         "info.listPoints.resources",
         "info.listPoints.individuals",
         "info.listPoints.knowledge"
-      ],
-      scrolled: false
+      ]
     };
-  },
-
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 20;
-    }
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
   }
 });
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-.slide-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-enter
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(100px);
-}
 </style>
