@@ -1,10 +1,8 @@
 <template>
-  <div class="pt-24 pl-24 flex z-50">
-    <button @click="navigateHome()" class="p-12">
+  <div class="flex p-12">
+    <button @click="navigateHome()">
       <Icon class="h-24 w-24" type="home" />
     </button>
-
-    <slot></slot>
   </div>
 </template>
 
