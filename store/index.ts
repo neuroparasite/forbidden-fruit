@@ -14,7 +14,13 @@ export const mutations = {
   setCurrentTopic(state: State, topic: string) {
     state.currentTopic = topic;
   },
+  resetCurrentTopic(state: State) {
+    state.currentTopic = "";
+  },
   setCurrentResourceType(state: State, resourceType: string) {
     state.currentResourceType = resourceType;
+  },
+  resetCurrentResourceType(state: State) {
+    state.currentResourceType = "";
   },
 };
