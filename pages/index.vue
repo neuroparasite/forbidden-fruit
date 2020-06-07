@@ -69,6 +69,10 @@ export default Vue.extend({
         "info.listPoints.knowledge"
       ]
     };
+  },
+  beforeMount() {
+    this.$store.commit("resetCurrentTopic");
+    this.$store.commit("resetCurrentResourceType");
   }
 });
 </script>
