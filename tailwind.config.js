@@ -31,7 +31,11 @@ module.exports = {
       disabled: "#4f4f4f",
     },
     backgroundColor: {
-      primary: "#2d2d2d",
+      primary: {
+        default: "#2d2d2d",
+        dark: "#232323",
+        light: "#3a3a3a",
+      },
       secondary: "#f2f2f2",
     },
     fontSize: {
