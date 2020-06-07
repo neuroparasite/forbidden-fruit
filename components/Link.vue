@@ -1,7 +1,7 @@
 <template>
   <button @click="navigateTo()" class="flex items-center">
     <Icon class="h-24 w-24 mr-12" type="link" />
-    <div>{{ $t(label) }}</div>
+    <div class="underline">{{ $t(label) }}</div>
   </button>
 </template>
 
