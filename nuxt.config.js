@@ -92,11 +92,38 @@ export default {
           },
           topics: {
             title: "Topics",
-            gender: "Gender",
-            biology: "Biology",
-            religion: "Religion",
-            diversity: "Diversity",
-            nwo: "New World Order",
+            gender: {
+              title: "Gender",
+            },
+            biology: {
+              title: "Biology",
+            },
+            religion: {
+              title: "Religion",
+            },
+            diversity: {
+              title: "Diversity",
+            },
+            nwo: {
+              title: "New World Order",
+            },
+          },
+          resourceTypes: {
+            articles: {
+              title: "Articles",
+            },
+            audio: {
+              title: "Audio",
+            },
+            literature: {
+              title: "Literature",
+            },
+            studies: {
+              title: "Studies",
+            },
+            videos: {
+              title: "Videos",
+            },
           },
           devilsAdvocates: {
             title: "Devil's Advocates",
