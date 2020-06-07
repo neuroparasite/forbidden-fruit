@@ -1,8 +1,6 @@
 <template>
   <div class="h-screen">
-    <HomeButton>
-      <BackLink class="ml-32" link="/discover" />
-    </HomeButton>
+    <NavBar />
 
     <FHeader title="topics.title" />
 
@@ -13,7 +11,6 @@
           :key="topic.id"
           :link="'/topics/' + topic.name"
           :label="topic.label"
-          class="mb-32 last:mb-0"
         />
       </div>
     </div>
@@ -23,27 +20,24 @@
 <script lang="ts">
 import Vue from "vue";
 import { topics } from "~/types";
-import HomeButton from "~/components/HomeButton.vue";
 import Link from "~/components/Link.vue";
-import BackLink from "~/components/BackLink.vue";
 import FHeader from "~/components/FHeader.vue";
+import NavBar from "~/components/NavBar.vue";
 
 export default Vue.extend({
   components: {
-    HomeButton,
     Link,
-    BackLink,
-    FHeader
+    FHeader,
+    NavBar
   },
   data() {
     return {
       topics: topics
     };
   },
-  methods: {
-    setCurrentTopic(topic: string) {
-      this.$store.commit("setCurrentTopic", topic);
-    }
+  beforeMount() {
+    this.$store.commit("resetCurrentTopic");
+    this.$store.commit("resetCurrentResourceType");
   }
 });
 </script>

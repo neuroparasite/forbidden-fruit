@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen">
-    <HomeButton />
+    <NavBar />
 
     <div class="flex flex-col items-center justify-center mt-128">
       <div>
@@ -10,7 +10,6 @@
           :link="link.link"
           :label="link.label"
           :disabled="link.disabled"
-          class="mb-32 last:mb-0"
         />
       </div>
     </div>
@@ -19,12 +18,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import HomeButton from "~/components/HomeButton.vue";
 import Link from "~/components/Link.vue";
+import NavBar from "~/components/NavBar.vue";
 
 export default Vue.extend({
   components: {
-    HomeButton,
+    NavBar,
     Link
   },
   data() {
@@ -47,6 +46,10 @@ export default Vue.extend({
         }
       ]
     };
+  },
+  beforeMount() {
+    this.$store.commit("resetCurrentTopic");
+    this.$store.commit("resetCurrentResourceType");
   }
 });
 </script>
