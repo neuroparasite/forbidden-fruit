@@ -27,10 +27,10 @@ module.exports = {
     },
     colors: {
       primary: "#f2f2f2",
-      secondary: "#161616",
+      secondary: "#2d2d2d",
     },
     backgroundColor: {
-      primary: "#161616",
+      primary: "#2d2d2d",
       secondary: "#f2f2f2",
     },
     fontSize: {
