@@ -60,27 +60,27 @@ export const topics = [
   {
     id: "0",
     name: "gender",
-    label: "topics.gender",
+    label: "topics.gender.title",
   },
   {
     id: "1",
     name: "biology",
-    label: "topics.biology",
+    label: "topics.biology.title",
   },
   {
     id: "2",
     name: "religion",
-    label: "topics.religion",
+    label: "topics.religion.title",
   },
   {
     id: "3",
     name: "diversity",
-    label: "topics.diversity",
+    label: "topics.diversity.title",
   },
   {
     id: "4",
     name: "new-world-order",
-    label: "topics.nwo",
+    label: "topics.nwo.title",
   },
 ];
 
@@ -88,21 +88,26 @@ export const resourceTypes = [
   {
     id: "0",
     name: "articles",
+    label: "resourceTypes.articles.title",
   },
   {
     id: "1",
     name: "audio",
+    label: "resourceTypes.audio.title",
   },
   {
     id: "2",
     name: "literature",
+    label: "resourceTypes.literature.title",
   },
   {
     id: "3",
     name: "studies",
+    label: "resourceTypes.studies.title",
   },
   {
     id: "4",
     name: "videos",
+    label: "resourceTypes.videos.title",
   },
 ];
