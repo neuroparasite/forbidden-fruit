@@ -19,7 +19,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { topics } from "~/types";
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
@@ -32,7 +31,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      topics: topics
+      topics: this.$store.state.topics
     };
   },
   beforeMount() {

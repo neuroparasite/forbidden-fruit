@@ -1,0 +1,41 @@
+[
+  {
+    "id": "0",
+    "name": "gender",
+    "label": "topics.gender.title",
+    "subtopics": [
+      {
+        "id": "0",
+        "name": "gynocentrism"
+      },
+      {
+        "id": "0",
+        "name": "womenAndSexRoles"
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "biology",
+    "label": "topics.biology.title",
+    "subtopics": []
+  },
+  {
+    "id": "2",
+    "name": "religion",
+    "label": "topics.religion.title",
+    "subtopics": []
+  },
+  {
+    "id": "3",
+    "name": "diversity",
+    "label": "topics.diversity.title",
+    "subtopics": []
+  },
+  {
+    "id": "4",
+    "name": "new-world-order",
+    "label": "topics.nwo.title",
+    "subtopics": []
+  }
+]

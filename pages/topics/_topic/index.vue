@@ -2,7 +2,7 @@
   <div class="h-screen">
     <NavBar />
 
-    <FHeader :title="`topics.${topic.name}.title`" />
+    <FHeader :title="topic.label" />
 
     <div class="flex flex-col items-center justify-center mt-56">
       <div>

@@ -1,7 +1,8 @@
 export interface State {
-  currentTopic: string;
+  currentTopic: Topic | undefined;
   currentResourceType: string;
 
+  topics: Topic[];
   tags: Tag[];
   devilsAdvocates: DevilsAdvocate[];
   // externalSources: ExternalSource[];
@@ -47,42 +48,18 @@ export interface Video extends Resource {
 }
 
 export interface Topic {
+  id: string;
   name: string;
-  description: string;
-  articleIds: number[];
-  audioIds: number[];
-  literatureIds: number[];
-  studyIds: number[];
-  videoIds: number[];
+  label: string;
+  //description: string;
+  subtopics: Subtopic[];
 }
 
-export const topics = [
-  {
-    id: "0",
-    name: "gender",
-    label: "topics.gender.title",
-  },
-  {
-    id: "1",
-    name: "biology",
-    label: "topics.biology.title",
-  },
-  {
-    id: "2",
-    name: "religion",
-    label: "topics.religion.title",
-  },
-  {
-    id: "3",
-    name: "diversity",
-    label: "topics.diversity.title",
-  },
-  {
-    id: "4",
-    name: "new-world-order",
-    label: "topics.nwo.title",
-  },
-];
+export interface Subtopic {
+  id: string;
+  name: string;
+  //description: string;
+}
 
 export const resourceTypes = [
   {
