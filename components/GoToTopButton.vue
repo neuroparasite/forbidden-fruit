@@ -18,6 +18,7 @@ const GoToTopButton = Vue.extend({
   components: {
     Icon
   },
+
   data() {
     return {
       scrolled: false
@@ -28,15 +29,17 @@ const GoToTopButton = Vue.extend({
     handleScroll() {
       this.scrolled = window.scrollY > 20;
     },
-    created() {
-      window.addEventListener("scroll", this.handleScroll);
-    },
-    destroyed() {
-      window.removeEventListener("scroll", this.handleScroll);
-    },
     goToTop() {
       document.body.scrollTop = 0;
     }
+  },
+
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 });
 
