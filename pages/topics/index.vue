@@ -9,7 +9,7 @@
         <Link
           v-for="topic in topics"
           :key="topic.id"
-          :link="'/topics/' + topic.name"
+          :link="`/topics/${topic.name}`"
           :label="topic.label"
         />
       </div>
@@ -19,9 +19,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters } from "vuex";
+
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
+import { Topic } from "~/types";
 
 export default Vue.extend({
   components: {
@@ -29,14 +32,11 @@ export default Vue.extend({
     FHeader,
     NavBar
   },
-  data() {
-    return {
-      topics: this.$store.state.topics
-    };
+  computed: {
+    ...mapGetters(["topics"])
   },
   beforeMount() {
-    this.$store.commit("resetCurrentTopic");
-    this.$store.commit("resetCurrentResourceType");
+    this.$store.commit("resetState");
   }
 });
 </script>
