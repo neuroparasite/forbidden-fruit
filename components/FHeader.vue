@@ -11,30 +11,25 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 
-const FHeader = Vue.extend({
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-    subtitle: {
-      type: String,
-      required: false
-    },
-    subsubtitle: {
-      type: String,
-      required: false
-    },
-    goToTop: {
-      type: Boolean,
-      required: false
-    }
-  }
-});
+@Component
+export default class FHeader extends Vue {
+  @Prop({ required: true })
+  title!: string;
 
-export default FHeader;
+  @Prop()
+  subtitle!: string;
+
+  @Prop()
+  subsubtitle!: string;
+
+  @Prop()
+  goToTop!: boolean;
+}
 </script>
 
 <style></style>

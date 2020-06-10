@@ -11,39 +11,37 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import Icon from "~/components/Icon.vue";
 
-const GoToTopButton = Vue.extend({
+@Component({
   components: {
-    Icon
+    Icon,
   },
+})
+export default class GoToTopButton extends Vue {
+  scrolled = false;
 
-  data() {
-    return {
-      scrolled: false
-    };
-  },
+  handleScroll() {
+    this.scrolled = window.scrollY > 20;
+  }
 
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 20;
-    },
-    goToTop() {
-      document.body.scrollTop = 0;
-    }
-  },
+  goToTop() {
+    document.body.scrollTop = 0;
+  }
 
   created() {
     window.addEventListener("scroll", this.handleScroll);
-  },
+  }
 
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   }
-});
-
-export default GoToTopButton;
+}
 </script>
 
 <style scoped>

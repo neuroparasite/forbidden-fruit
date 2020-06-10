@@ -17,32 +17,30 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import HomeButton from "~/components/HomeButton.vue";
 import GoToTopButton from "~/components/GoToTopButton.vue";
 
-const NavBar = Vue.extend({
+@Component({
   components: {
     HomeButton,
-    GoToTopButton
+    GoToTopButton,
   },
-  props: {
-    title: {
-      type: String,
-      required: false
-    },
-    subtitle: {
-      type: String,
-      required: false
-    },
-    subsubtitle: {
-      type: String,
-      required: false
-    }
-  }
-});
+})
+export default class NavBar extends Vue {
+  @Prop()
+  title!: string;
 
-export default NavBar;
+  @Prop()
+  subtitle!: string;
+
+  @Prop()
+  subsubtitle!: string;
+}
 </script>
 
 <style></style>

@@ -8,33 +8,32 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import Icon from "~/components/Icon.vue";
 
-const ScrollDownIndicator = Vue.extend({
+@Component({
   components: {
-    Icon
+    Icon,
   },
-  data() {
-    return {
-      scrolled: false
-    };
-  },
+})
+export default class ScrollDownIndicator extends Vue {
+  scrolled = false;
 
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 20;
-    }
-  },
+  handleScroll() {
+    this.scrolled = window.scrollY > 20;
+  }
+
   created() {
     window.addEventListener("scroll", this.handleScroll);
-  },
+  }
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   }
-});
-
-export default ScrollDownIndicator;
+}
 </script>
 
 <style scoped>
@@ -42,7 +41,8 @@ export default ScrollDownIndicator;
 .fade-leave-active {
   transition: opacity 0.2s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

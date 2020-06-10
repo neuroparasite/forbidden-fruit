@@ -1,4 +1,4 @@
-export default interface Icon {
+export default interface SVGIcon {
   viewBox: string;
   paths: Path[];
 }
@@ -9,7 +9,7 @@ interface Path {
   clipRule?: string;
 }
 
-export const iconPaths: { [key: string]: Icon } = {
+export const iconPaths: { [key: string]: SVGIcon } = {
   arrowDown: {
     viewBox: "0 0 24 24",
     paths: [

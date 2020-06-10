@@ -5,7 +5,7 @@
     :viewBox="icon.viewBox"
     :fill="color"
   >
-    <g v-if="this.growOnHover" :class="{'cursor-pointer': this.clickable}">
+    <g v-if="this.growOnHover" :class="{ 'cursor-pointer': this.clickable }">
       <path
         v-on:mouseover="grow()"
         v-on:mouseout="shrink()"
@@ -17,7 +17,7 @@
       />
     </g>
 
-    <g v-else :class="{'cursor-pointer': this.clickable}">
+    <g v-else :class="{ 'cursor-pointer': this.clickable }">
       <path
         v-for="path in icon.paths"
         :key="path.path"
@@ -30,50 +30,41 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
-import Icon from "~/static/icons";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
+import SVGIcon from "~/static/icons";
 import { iconPaths } from "~/static/icons";
 
-const Icon = Vue.extend({
-  data() {
-    return {
-      pathHovered: false
-    };
-  },
-  props: {
-    type: {
-      type: String,
-      required: true
-    },
-    color: {
-      type: String,
-      default: "currentColor"
-    },
-    growOnHover: {
-      type: Boolean,
-      default: false
-    },
-    clickable: {
-      type: Boolean,
-      default: false
-    }
-  },
-  methods: {
-    grow(): void {
-      this.pathHovered = true;
-    },
-    shrink(): void {
-      this.pathHovered = false;
-    }
-  },
-  computed: {
-    icon(): Icon {
-      return iconPaths[this.type];
-    }
-  }
-});
+@Component
+export default class Icon extends Vue {
+  pathHovered = false;
 
-export default Icon;
+  @Prop({ required: true })
+  type!: string;
+
+  @Prop({ default: "currentColor" })
+  color!: string;
+
+  @Prop({ default: false })
+  growOnHover!: boolean;
+
+  @Prop({ default: false })
+  clickable!: boolean;
+
+  grow(): void {
+    this.pathHovered = true;
+  }
+  shrink(): void {
+    this.pathHovered = false;
+  }
+
+  get icon(): SVGIcon {
+    return iconPaths[this.type];
+  }
+}
 </script>
 
 <style scoped>

@@ -10,36 +10,32 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import Icon from "~/components/Icon.vue";
 
-const Link = Vue.extend({
+@Component({
   components: {
-    Icon
+    Icon,
   },
-  props: {
-    link: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    disabled: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
-  methods: {
-    navigateTo() {
-      this.$router.push(this.link);
-    }
-  }
-});
+})
+export default class Link extends Vue {
+  @Prop({ required: true })
+  link!: string;
 
-export default Link;
+  @Prop({ required: true })
+  label!: string;
+
+  @Prop({ default: false })
+  disabled!: boolean;
+
+  navigateTo() {
+    this.$router.push(this.link);
+  }
+}
 </script>
 
 <style></style>

@@ -9,6 +9,8 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {

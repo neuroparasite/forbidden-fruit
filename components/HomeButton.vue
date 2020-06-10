@@ -8,20 +8,20 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Component from "vue-class-component";
+
 import Icon from "~/components/Icon.vue";
 
-const HomeButton = Vue.extend({
+@Component({
   components: {
-    Icon
+    Icon,
   },
-  methods: {
-    navigateHome() {
-      this.$router.push("/");
-    }
+})
+export default class HomeButton extends Vue {
+  navigateHome() {
+    this.$router.push("/");
   }
-});
-
-export default HomeButton;
+}
 </script>
 
 <style></style>
