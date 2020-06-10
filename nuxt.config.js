@@ -94,6 +94,12 @@ export default {
             title: "Topics",
             gender: {
               title: "Gender",
+              gynocentrism: {
+                title: "Gynocentrism",
+              },
+              womenAndSexRoles: {
+                title: "Women and Sex Roles",
+              },
             },
             biology: {
               title: "Biology",
@@ -106,23 +112,6 @@ export default {
             },
             nwo: {
               title: "New World Order",
-            },
-          },
-          resourceTypes: {
-            articles: {
-              title: "Articles",
-            },
-            audio: {
-              title: "Audio",
-            },
-            literature: {
-              title: "Literature",
-            },
-            studies: {
-              title: "Studies",
-            },
-            videos: {
-              title: "Videos",
             },
           },
           devilsAdvocates: {
@@ -138,6 +127,9 @@ export default {
           ui: {
             back: "Back",
             goToTop: "Go To Top",
+            copyLink: "Copy Link",
+            source: "Source",
+            close: "Close",
           },
         },
       },
