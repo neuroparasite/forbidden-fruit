@@ -52,4 +52,7 @@ export const getters = {
   tags: (state: State) => {
     return state.tags;
   },
+  tagsByNames: (state: State) => (tagNames: string[]) => {
+    return state.tags.filter((tag) => tagNames.includes(tag.name));
+  },
 };
