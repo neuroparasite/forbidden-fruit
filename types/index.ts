@@ -1,6 +1,6 @@
 export interface State {
   currentTopic: Topic | undefined;
-  currentResourceType: string;
+  currentSubtopic: Subtopic | undefined;
 
   topics: Topic[];
   tags: Tag[];
