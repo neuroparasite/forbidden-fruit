@@ -2,15 +2,15 @@
   <div class="h-screen">
     <NavBar />
 
-    <FHeader :title="topic.label" />
+    <FHeader :title="currentTopic.label" />
 
     <div class="flex flex-col items-center justify-center mt-56">
       <div>
         <Link
-          v-for="resourceType in resourceTypes"
-          :key="resourceType.id"
-          :link="`/topics/${topic.name}/${resourceType.name}`"
-          :label="resourceType.label"
+          v-for="subtopic in currentTopic.subtopics"
+          :key="subtopic.id"
+          :link="`/topics/${currentTopic.name}/${subtopic.name}`"
+          :label="subtopic.label"
         />
       </div>
     </div>
@@ -19,11 +19,13 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters } from "vuex";
+
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 
-import { resourceTypes } from "~/types";
+import { Topic } from "~/types";
 
 export default Vue.extend({
   components: {
@@ -31,20 +33,15 @@ export default Vue.extend({
     Link,
     FHeader
   },
-  data() {
-    return {
-      resourceTypes: resourceTypes
-    };
+  computed: {
+    ...mapGetters(["currentTopic"])
   },
-  props: ["topic"],
-  methods: {
-    setCurrentResourceType(resourceType: string) {
-      this.$store.commit("setCurrentResourceType", resourceType);
-    }
+  validate({ params, store }) {
+    const topics: Topic[] = store.getters["topics"];
+    return !!topics.find(t => t.name === params.topic);
   },
   beforeMount() {
-    const topic = this.$route.fullPath.split("/")[2];
-    this.$store.commit("setCurrentTopic", topic);
+    this.$store.commit("setCurrentTopic", this.$route.params.topic);
   }
 });
 </script>
