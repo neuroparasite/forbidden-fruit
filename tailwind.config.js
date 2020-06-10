@@ -28,6 +28,9 @@ module.exports = {
     colors: {
       primary: "#f2f2f2",
       secondary: "#2d2d2d",
+      accent: {
+        default: "#eb5757",
+      },
       disabled: "#4f4f4f",
     },
     backgroundColor: {
@@ -37,6 +40,10 @@ module.exports = {
         light: "#3a3a3a",
       },
       secondary: "#f2f2f2",
+      overlay: "#0d0d0d",
+      accent: {
+        default: "#eb5757",
+      },
     },
     fontSize: {
       "10": "0.625rem",
