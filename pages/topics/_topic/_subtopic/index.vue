@@ -3,6 +3,12 @@
     <NavBar />
 
     <FHeader :title="currentTopic.label" />
+
+    <Resource
+      v-for="article in currentSubtopic.articles"
+      :key="article.id"
+      :article="article"
+    />
   </div>
 </template>
 
@@ -16,6 +22,7 @@ import { mapGetters } from "vuex";
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
+import Resource from "~/components/Resource.vue";
 import { Subtopic } from "~/types";
 
 @Component({
@@ -23,6 +30,7 @@ import { Subtopic } from "~/types";
     FHeader,
     Link,
     NavBar,
+    Resource,
   },
   computed: {
     ...mapGetters(["currentTopic", "currentSubtopic", "subtopics"]),
