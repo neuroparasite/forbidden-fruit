@@ -5,7 +5,7 @@
     <div class="flex flex-col items-center justify-center mt-128">
       <div>
         <Link
-          v-for="link in links"
+          v-for="link in discoverLinks"
           :key="link.link"
           :link="link.link"
           :label="link.label"
@@ -18,6 +18,8 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters } from "vuex";
+
 import Link from "~/components/Link.vue";
 import NavBar from "~/components/NavBar.vue";
 
@@ -26,30 +28,11 @@ export default Vue.extend({
     NavBar,
     Link
   },
-  data() {
-    return {
-      links: [
-        {
-          link: "/topics",
-          label: "topics.title",
-          disabled: false
-        },
-        {
-          link: "/devils_advocates",
-          label: "devilsAdvocates.title",
-          disabled: true
-        },
-        {
-          link: "/external_resources",
-          label: "externalResources.title",
-          disabled: true
-        }
-      ]
-    };
+  computed: {
+    ...mapGetters(["discoverLinks"])
   },
   beforeMount() {
-    this.$store.commit("resetCurrentTopic");
-    this.$store.commit("resetCurrentResourceType");
+    this.$store.commit("resetState");
   }
 });
 </script>

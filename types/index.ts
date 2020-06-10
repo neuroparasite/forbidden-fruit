@@ -2,6 +2,7 @@ export interface State {
   currentTopic: Topic | undefined;
   currentSubtopic: Subtopic | undefined;
 
+  discoverLinks: DiscoverLink[];
   topics: Topic[];
   tags: Tag[];
   devilsAdvocates: DevilsAdvocate[];
@@ -61,30 +62,9 @@ export interface Subtopic {
   //description: string;
 }
 
-export const resourceTypes = [
-  {
-    id: "0",
-    name: "articles",
-    label: "resourceTypes.articles.title",
-  },
-  {
-    id: "1",
-    name: "audio",
-    label: "resourceTypes.audio.title",
-  },
-  {
-    id: "2",
-    name: "literature",
-    label: "resourceTypes.literature.title",
-  },
-  {
-    id: "3",
-    name: "studies",
-    label: "resourceTypes.studies.title",
-  },
-  {
-    id: "4",
-    name: "videos",
-    label: "resourceTypes.videos.title",
-  },
-];
+export interface DiscoverLink {
+  id: string;
+  link: string;
+  label: string;
+  disabled: boolean;
+}

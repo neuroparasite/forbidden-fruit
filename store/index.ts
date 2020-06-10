@@ -1,3 +1,4 @@
+import discover_links from "~/static/data/discover_links.json";
 import devils_advocates from "~/static/data/devils_advocates.json";
 import tags from "~/static/data/tags.json";
 import topics from "~/static/data/topics.json";
@@ -7,6 +8,7 @@ export const state = (): State => ({
   currentTopic: undefined,
   currentSubtopic: undefined,
 
+  discoverLinks: discover_links,
   topics,
   devilsAdvocates: devils_advocates,
   tags,
@@ -33,6 +35,9 @@ export const getters = {
   },
   currentSubtopic: (state: State) => {
     return state.currentSubtopic;
+  },
+  discoverLinks: (state: State) => {
+    return state.discoverLinks;
   },
   topics: (state: State) => {
     return state.topics;
