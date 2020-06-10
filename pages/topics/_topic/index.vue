@@ -18,7 +18,10 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import Link from "~/components/Link.vue";
@@ -27,21 +30,23 @@ import NavBar from "~/components/NavBar.vue";
 
 import { Topic } from "~/types";
 
-export default Vue.extend({
+@Component({
   components: {
-    NavBar,
+    FHeader,
     Link,
-    FHeader
+    NavBar,
   },
   computed: {
-    ...mapGetters(["currentTopic"])
+    ...mapGetters(["currentTopic"]),
   },
-  validate({ params, store }) {
+  validate({ params, store }: any) {
     const topics: Topic[] = store.getters["topics"];
-    return !!topics.find(t => t.name === params.topic);
+    return !!topics.find((t) => t.name === params.topic);
   },
+})
+export default class TopicPage extends Vue {
   beforeMount() {
     this.$store.commit("setCurrentTopic", this.$route.params.topic);
   }
-});
+}
 </script>

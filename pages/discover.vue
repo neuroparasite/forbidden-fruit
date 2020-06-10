@@ -17,24 +17,29 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
 import Link from "~/components/Link.vue";
 import NavBar from "~/components/NavBar.vue";
 
-export default Vue.extend({
+@Component({
   components: {
+    Link,
     NavBar,
-    Link
   },
   computed: {
-    ...mapGetters(["discoverLinks"])
+    ...mapGetters(["discoverLinks"]),
   },
+})
+export default class DiscoverPage extends Vue {
   beforeMount() {
     this.$store.commit("resetState");
   }
-});
+}
 </script>
 
 <style></style>

@@ -18,25 +18,29 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
-import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
+import Link from "~/components/Link.vue";
 import NavBar from "~/components/NavBar.vue";
-import { Topic } from "~/types";
 
-export default Vue.extend({
+@Component({
   components: {
-    Link,
     FHeader,
-    NavBar
+    Link,
+    NavBar,
   },
   computed: {
-    ...mapGetters(["topics"])
+    ...mapGetters(["topics"]),
   },
+})
+export default class TopicsPage extends Vue {
   beforeMount() {
     this.$store.commit("resetState");
   }
-});
+}
 </script>

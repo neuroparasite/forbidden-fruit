@@ -19,19 +19,23 @@
       <div
         class="flex items-center justify-center mt-128 text-24 text-secondary font-black tracking-tighter leading-none w-fruit h-fruit rounded-full bg-secondary"
       >
-        <nuxt-link class="w-fruitText underline" to="/discover">{{ $t("home.discover") }}</nuxt-link>
+        <nuxt-link class="w-fruitText underline" to="/discover">{{
+          $t("home.discover")
+        }}</nuxt-link>
       </div>
 
       <ScrollDownIndicator />
     </div>
 
     <!-- Info -->
-    <div class="flex flex-col items-center justify-center h-screen text-secondary">
+    <div
+      class="flex flex-col items-center justify-center h-screen text-secondary"
+    >
       <div
         class="flex flex-col items-center justify-center h-circleLarge w-circleLarge border-3 border-primary border-solid rounded-full bg-secondary"
       >
         <div class="flex flex-col px-64">
-          <div class="mb-24">{{ $t("info.description")}}</div>
+          <div class="mb-24">{{ $t("info.description") }}</div>
 
           <List :text="listText" :points="listPoints" />
         </div>
@@ -49,32 +53,34 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import Vue from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+
 import Icon from "~/components/Icon.vue";
 import List from "~/components/List.vue";
 import ScrollDownIndicator from "~/components/ScrollDownIndicator.vue";
 
-export default Vue.extend({
+@Component({
   components: {
     Icon,
     List,
-    ScrollDownIndicator
+    ScrollDownIndicator,
   },
-  data() {
-    return {
-      listText: "info.listText",
-      listPoints: [
-        "info.listPoints.resources",
-        "info.listPoints.individuals",
-        "info.listPoints.knowledge"
-      ]
-    };
-  },
+})
+export default class HomePage extends Vue {
+  listText = "info.listText";
+  listPoints = [
+    "info.listPoints.resources",
+    "info.listPoints.individuals",
+    "info.listPoints.knowledge",
+  ];
+
   beforeMount() {
     this.$store.commit("resetState");
   }
-});
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
