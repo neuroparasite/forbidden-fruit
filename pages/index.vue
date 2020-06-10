@@ -71,8 +71,7 @@ export default Vue.extend({
     };
   },
   beforeMount() {
-    this.$store.commit("resetCurrentTopic");
-    this.$store.commit("resetCurrentResourceType");
+    this.$store.commit("resetState");
   }
 });
 </script>
