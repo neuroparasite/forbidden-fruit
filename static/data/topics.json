@@ -6,11 +6,13 @@
     "subtopics": [
       {
         "id": "0",
-        "name": "gynocentrism"
+        "name": "gynocentrism",
+        "label": "topics.gender.gynocentrism.title"
       },
       {
-        "id": "0",
-        "name": "womenAndSexRoles"
+        "id": "1",
+        "name": "womenAndSexRoles",
+        "label": "topics.gender.womenAndSexRoles.title"
       }
     ]
   },
