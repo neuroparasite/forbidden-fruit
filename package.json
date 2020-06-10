@@ -14,7 +14,10 @@
     "@nuxtjs/tailwindcss": "^2.0.0",
     "nuxt": "^2.12.2",
     "nuxt-i18n": "^6.12.2",
-    "strapi": "^3.0.1"
+    "reflect-metadata": "^0.1.13",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^1.0.1",
