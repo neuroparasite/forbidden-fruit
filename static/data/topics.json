@@ -7,12 +7,23 @@
       {
         "id": "0",
         "name": "gynocentrism",
-        "label": "topics.gender.gynocentrism.title"
+        "label": "topics.gender.gynocentrism.title",
+        "articles": [
+          {
+            "id": "0",
+            "year": 2001,
+            "title": "resource",
+            "description": "description",
+            "source": "https://example.com",
+            "tagNames": ["unverified"]
+          }
+        ]
       },
       {
         "id": "1",
         "name": "womenAndSexRoles",
-        "label": "topics.gender.womenAndSexRoles.title"
+        "label": "topics.gender.womenAndSexRoles.title",
+        "articles": []
       }
     ]
   },

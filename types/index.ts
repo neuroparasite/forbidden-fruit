@@ -7,7 +7,6 @@ export interface State {
   tags: Tag[];
   devilsAdvocates: DevilsAdvocate[];
   // externalSources: ExternalSource[];
-  // articles: Resource[];
   // audios: Resource[];
   // literatures: Resource[];
   // studies: Resource[];
@@ -31,23 +30,6 @@ export interface DevilsAdvocate {
   imageLink: string;
 }
 
-export interface Resource {
-  id: number;
-  name: string;
-  description: string;
-  source: string;
-}
-
-export interface ExternalSource {
-  name: string;
-  description: string;
-  source: string;
-}
-
-export interface Video extends Resource {
-  isVideo: boolean;
-}
-
 export interface Topic {
   id: string;
   name: string;
@@ -59,7 +41,24 @@ export interface Topic {
 export interface Subtopic {
   id: string;
   name: string;
+  label: string;
   //description: string;
+  articles: Article[];
+}
+
+export interface Article {
+  id: string;
+  year: number;
+  title: string;
+  description: string;
+  tagNames: string[];
+  source: string;
+}
+
+export interface ExternalSource {
+  name: string;
+  description: string;
+  source: string;
 }
 
 export interface DiscoverLink {
