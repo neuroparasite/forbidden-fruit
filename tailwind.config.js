@@ -17,7 +17,9 @@ module.exports = {
         "24": "1.5rem",
         "32": "2rem",
       },
-      minHeight: {},
+      minHeight: {
+        screen: "100vh",
+      },
       maxHeight: {},
       minWidth: {},
       maxWidth: {},
