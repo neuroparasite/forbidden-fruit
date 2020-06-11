@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen" :class="{ 'overflow-hidden': currentTag }">
+  <div class="min-h-screen w-screen">
     <NavBar />
 
     <FHeader
@@ -20,6 +20,7 @@
       <div
         v-if="currentTag"
         class="fixed top-0 flex items-center justify-center min-h-screen w-screen bg-opacity-75 bg-overlay"
+        @click="hideTagOverlay()"
       >
         <div class="flex flex-col p-16 bg-primary w-screen mx-32">
           <div class="flex">
