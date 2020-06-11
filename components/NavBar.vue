@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky">
+  <div class="sticky top-0">
     <div class="flex items-center justify-between bg-primary-dark">
       <HomeButton />
 
