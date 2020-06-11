@@ -10,7 +10,7 @@
     />
 
     <!-- Home -->
-    <div class="flex flex-col items-center text-center h-screen">
+    <div class="flex flex-col items-center text-center min-h-screen">
       <div class="mt-56 mx-64">
         <div class="text-16 mb-12">{{ $t("home.quote") }}</div>
         <div class="text-12">{{ $t("home.quoteSource") }}</div>
@@ -29,7 +29,7 @@
 
     <!-- Info -->
     <div
-      class="flex flex-col items-center justify-center h-screen text-secondary"
+      class="flex flex-col items-center justify-center min-h-screen text-secondary"
     >
       <div
         class="flex flex-col items-center justify-center h-circleLarge w-circleLarge border-3 border-primary border-solid rounded-full bg-secondary"
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Support Me -->
-    <!-- <div class="flex flex-col items-center justify-center h-screen">
+    <!-- <div class="flex flex-col items-center justify-center min-h-screen">
       <div class="flex items-center">
         <Icon class="h-32 w-32 mr-12" type="paypal" />
         <a href="https://paypal.me/xxx" class="underline">{{ $t("paypal") }}</a>

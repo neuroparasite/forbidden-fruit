@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen">
+  <div class="min-h-screen">
     <NavBar />
 
     <div class="flex flex-col items-center justify-center mt-128">
