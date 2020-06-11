@@ -1,6 +1,7 @@
 export interface State {
   currentTopic: Topic | undefined;
   currentSubtopic: Subtopic | undefined;
+  currentTag: Tag | undefined;
 
   discoverLinks: DiscoverLink[];
   topics: Topic[];

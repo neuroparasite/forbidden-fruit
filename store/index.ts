@@ -7,6 +7,7 @@ import { Topic, State, Subtopic } from "~/types";
 export const state = (): State => ({
   currentTopic: undefined,
   currentSubtopic: undefined,
+  currentTag: undefined,
 
   discoverLinks: discover_links,
   topics,
@@ -18,6 +19,7 @@ export const mutations = {
   resetState(state: State) {
     state.currentTopic = undefined;
     state.currentSubtopic = undefined;
+    state.currentTag = undefined;
   },
   setCurrentTopic(state: State, topicName: string) {
     state.currentTopic = state.topics.find((t: Topic) => t.name === topicName);
@@ -27,6 +29,12 @@ export const mutations = {
       (s: Subtopic) => s.name === subtopicName
     );
   },
+  setCurrentTag(state: State, tagName: string) {
+    state.currentTag = state.tags.find((t) => t.name === tagName);
+  },
+  unsetCurrentTag(state: State) {
+    state.currentTag = undefined;
+  },
 };
 
 export const getters = {
@@ -35,6 +43,9 @@ export const getters = {
   },
   currentSubtopic: (state: State) => {
     return state.currentSubtopic;
+  },
+  currentTag: (state: State) => {
+    return state.currentTag;
   },
   discoverLinks: (state: State) => {
     return state.discoverLinks;
