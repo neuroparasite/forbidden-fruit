@@ -1,20 +1,25 @@
 <template>
-  <div class="h-screen">
+  <div class="min-h-screen" :class="{ 'overflow-hidden': currentTag }">
     <NavBar />
 
-    <FHeader :title="currentTopic.label" />
+    <FHeader
+      :title="currentTopic.label"
+      :subtitle="currentSubtopic.label"
+      class="mb-24"
+    />
 
     <Resource
       v-for="article in currentSubtopic.articles"
       :key="article.id"
       :article="article"
+      class="mb-8 last:mb-0"
     />
 
     <!-- Tag Overlay -->
     <FFade>
       <div
         v-if="currentTag"
-        class="absolute top-0 left-0 flex items-center justify-center h-screen w-screen bg-opacity-75 bg-overlay"
+        class="fixed top-0 flex items-center justify-center min-h-screen w-screen bg-opacity-75 bg-overlay"
       >
         <div class="flex flex-col p-16 bg-primary w-screen mx-32">
           <div class="flex">
