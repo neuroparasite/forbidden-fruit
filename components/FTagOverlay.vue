@@ -25,7 +25,11 @@
             'justify-end': !currentTag.wikipediaLink,
           }"
         >
-          <a :href="$t(`tags.${currentTag.i18nKey}.wikipediaLink`)"> </a>
+          <FWikipediaLink
+            v-if="currentTag.wikipediaLink"
+            :i18nKey="`tags.${currentTag.i18nKey}.wikipediaLink`"
+          />
+
           <button
             class="text-secondary p-8 bg-accent uppercase"
             @click="hideTagOverlay()"
@@ -45,12 +49,14 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
+import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import FFade from "~/components/transitions/FFade.vue";
 
 import { Subtopic } from "~/types";
 
 @Component({
   components: {
+    FWikipediaLink,
     FFade,
   },
   computed: {
