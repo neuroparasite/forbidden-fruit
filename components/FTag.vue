@@ -4,7 +4,7 @@
       class="text-12 text-center px-8 py-4 bg-primary-dark uppercase"
       @click="showTagOverlay()"
     >
-      {{ tag.name }}
+      {{ $t(`tags.${tag.i18nKey}.title`) }}
     </button>
   </div>
 </template>

@@ -3,9 +3,35 @@
     <NavBar />
 
     <FHeader
-      :title="currentTopic.label"
-      :subtitle="currentSubtopic.label"
+      :title="`topics.${currentTopic.i18nKey}.title`"
+      :subtitle="
+        `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.title`
+      "
       class="mb-24"
+    />
+
+    <div class="flex items-start mx-32 mb-24">
+      <div class="mr-12">
+        {{
+          $t(
+            `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.description`
+          )
+        }}
+      </div>
+
+      <FWikipediaLink
+        :i18nKey="
+          `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.wikipediaLink`
+        "
+      />
+    </div>
+
+    <Link
+      :link="
+        `/topics/${currentTopic.i18nKey}/${currentSubtopic.i18nKey}/external_resources`
+      "
+      label="externalResources.title"
+      class="ml-32"
     />
 
     <Resource
@@ -15,35 +41,7 @@
       class="mb-8 last:mb-0"
     />
 
-    <!-- Tag Overlay -->
-    <FFade>
-      <div
-        v-if="currentTag"
-        class="fixed top-0 flex items-center justify-center min-h-screen w-screen bg-opacity-75 bg-overlay"
-        @click="hideTagOverlay()"
-      >
-        <div class="flex flex-col p-16 bg-primary w-screen mx-32">
-          <div class="flex">
-            <div
-              class="text-12 text-center px-8 py-4 mb-20 bg-primary-dark uppercase"
-            >
-              {{ currentTag.name }}
-            </div>
-          </div>
-
-          <div class="mb-20">{{ currentTag.description }}</div>
-
-          <div class="flex justify-center">
-            <button
-              class="text-secondary p-8 bg-accent uppercase"
-              @click="hideTagOverlay()"
-            >
-              {{ $t("ui.close") }}
-            </button>
-          </div>
-        </div>
-      </div>
-    </FFade>
+    <FTagOverlay />
   </div>
 </template>
 
@@ -58,7 +56,10 @@ import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 import Resource from "~/components/Resource.vue";
+import FTagOverlay from "~/components/FTagOverlay.vue";
+import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import FFade from "~/components/transitions/FFade.vue";
+import Icon from "~/components/Icon.vue";
 
 import { Subtopic } from "~/types";
 
@@ -68,19 +69,16 @@ import { Subtopic } from "~/types";
     Link,
     NavBar,
     Resource,
-    FFade,
+    Icon,
+    FTagOverlay,
+    FWikipediaLink,
   },
   computed: {
-    ...mapGetters([
-      "currentTopic",
-      "currentSubtopic",
-      "subtopics",
-      "currentTag",
-    ]),
+    ...mapGetters(["currentTopic", "currentSubtopic", "currentTag"]),
   },
   validate({ params, store }: any) {
     return !!store.getters["subtopics"](params.topic).find(
-      (s: Subtopic) => s.name === params.subtopic
+      (s: Subtopic) => s.i18nKey === params.subtopic
     );
   },
 })

@@ -2,15 +2,15 @@
   <div class="min-h-screen">
     <NavBar />
 
-    <FHeader :title="currentTopic.label" />
+    <FHeader :title="`topics.${currentTopic.i18nKey}.title`" />
 
     <div class="flex flex-col items-center justify-center mt-56">
       <div>
         <Link
           v-for="subtopic in currentTopic.subtopics"
           :key="subtopic.id"
-          :link="`/topics/${currentTopic.name}/${subtopic.name}`"
-          :label="subtopic.label"
+          :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
+          :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
         />
       </div>
     </div>
@@ -41,7 +41,7 @@ import { Topic } from "~/types";
   },
   validate({ params, store }: any) {
     const topics: Topic[] = store.getters["topics"];
-    return !!topics.find((t) => t.name === params.topic);
+    return !!topics.find((t) => t.i18nKey === params.topic);
   },
 })
 export default class TopicPage extends Vue {

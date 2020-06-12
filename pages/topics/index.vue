@@ -9,8 +9,8 @@
         <Link
           v-for="topic in topics"
           :key="topic.id"
-          :link="`/topics/${topic.name}`"
-          :label="topic.label"
+          :link="`/topics/${topic.i18nKey}`"
+          :label="`topics.${topic.i18nKey}.title`"
         />
       </div>
     </div>
