@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24 ml-48 flex">
+  <div class="mt-24 ml-32 flex">
     <div class="flex flex-col">
       <div class="font-black text-32">{{ $t(title) }}</div>
       <div v-if="subtitle" class="flex">
