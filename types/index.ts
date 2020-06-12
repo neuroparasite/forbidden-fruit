@@ -17,7 +17,8 @@ export interface State {
 
 export interface Tag {
   name: string;
-  description: string;
+  i18nKey: string;
+  wikipediaLink?: boolean;
 }
 
 export interface DevilsAdvocate {
@@ -33,18 +34,17 @@ export interface DevilsAdvocate {
 
 export interface Topic {
   id: string;
-  name: string;
-  label: string;
+  i18nKey: string;
   //description: string;
   subtopics: Subtopic[];
 }
 
 export interface Subtopic {
   id: string;
-  name: string;
-  label: string;
-  //description: string;
+  i18nKey: string;
   articles: Article[];
+  externalResources: ExternalResource[];
+  wikipediaLink?: boolean;
 }
 
 export interface Article {
@@ -56,9 +56,9 @@ export interface Article {
   source: string;
 }
 
-export interface ExternalSource {
-  name: string;
-  description: string;
+export interface ExternalResource {
+  i18nKey: string;
+  tagNames: string[];
   source: string;
 }
 

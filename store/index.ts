@@ -22,11 +22,13 @@ export const mutations = {
     state.currentTag = undefined;
   },
   setCurrentTopic(state: State, topicName: string) {
-    state.currentTopic = state.topics.find((t: Topic) => t.name === topicName);
+    state.currentTopic = state.topics.find(
+      (t: Topic) => t.i18nKey === topicName
+    );
   },
   setCurrentSubtopic(state: State, subtopicName: string) {
     state.currentSubtopic = state.currentTopic?.subtopics.find(
-      (s: Subtopic) => s.name === subtopicName
+      (s: Subtopic) => s.i18nKey === subtopicName
     );
   },
   setCurrentTag(state: State, tagName: string) {
@@ -54,7 +56,7 @@ export const getters = {
     return state.topics;
   },
   subtopics: (_: State, getters: any) => (topicName: string) => {
-    const topic = getters["topics"].find((t: Topic) => t.name === topicName);
+    const topic = getters["topics"].find((t: Topic) => t.i18nKey === topicName);
     return topic?.subtopics;
   },
   devilsAdvocates: (state: State) => {

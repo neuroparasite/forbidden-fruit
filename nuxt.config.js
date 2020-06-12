@@ -96,6 +96,16 @@ export default {
               title: "Gender",
               gynocentrism: {
                 title: "Gynocentrism",
+                description:
+                  "Contrary to mainstream belief, the modern human lives in a gynocentric society, not a patriarchal one. Some argue this stems from the fact that all primate societies are inherently gynocentric.",
+                wikipediaLink: "https://en.wikipedia.org/wiki/Gynocentrism",
+                externalResources: {
+                  gynocentrismAndItsCulturalOrigins: {
+                    title: "Gynocentrism and its Cultural Origins",
+                    description:
+                      "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man.",
+                  },
+                },
               },
               womenAndSexRoles: {
                 title: "Women and Sex Roles",
@@ -112,6 +122,22 @@ export default {
             },
             nwo: {
               title: "New World Order",
+            },
+          },
+          tags: {
+            unverified: {
+              title: "Unverified",
+              description: "a",
+            },
+            scientificallyProven: {
+              title: "Scientifically Proven",
+              description: "b",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
+            },
+            anecdotalEvidence: {
+              title: "Anecdotal Evidence",
+              description: "c",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
             },
           },
           devilsAdvocates: {

@@ -1,6 +1,16 @@
 [
   {
     "name": "unverified",
-    "description": "description"
+    "i18nKey": "unverified"
+  },
+  {
+    "name": "scientifically proven",
+    "i18nKey": "scientificallyProven",
+    "wikipediaLink": true
+  },
+  {
+    "name": "anecdotal evidence",
+    "i18nKey": "anecdotalEvidence",
+    "wikipediaLink": true
   }
 ]

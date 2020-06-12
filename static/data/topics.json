@@ -1,13 +1,11 @@
 [
   {
     "id": "0",
-    "name": "gender",
-    "label": "topics.gender.title",
+    "i18nKey": "gender",
     "subtopics": [
       {
         "id": "0",
-        "name": "gynocentrism",
-        "label": "topics.gender.gynocentrism.title",
+        "i18nKey": "gynocentrism",
         "articles": [
           {
             "id": "0",
@@ -16,39 +14,76 @@
             "description": "description",
             "source": "https://example.com",
             "tagNames": ["unverified"]
+          },
+          {
+            "id": "1",
+            "year": 2001,
+            "title": "resource",
+            "description": "description",
+            "source": "https://example.com",
+            "tagNames": ["unverified"]
+          },
+          {
+            "id": "2",
+            "year": 2001,
+            "title": "resource",
+            "description": "description",
+            "source": "https://example.com",
+            "tagNames": ["unverified"]
+          },
+          {
+            "id": "3",
+            "year": 2001,
+            "title": "resource",
+            "description": "description",
+            "source": "https://example.com",
+            "tagNames": ["unverified"]
+          },
+          {
+            "id": "4",
+            "year": 2001,
+            "title": "resource",
+            "description": "description",
+            "source": "https://example.com",
+            "tagNames": ["unverified"]
           }
-        ]
+        ],
+        "externalResources": [
+          {
+            "i18nKey": "gynocentrismAndItsCulturalOrigins",
+            "tagNames": ["anecdotal evidence"],
+            "source": "https://gynocentrism.com"
+          }
+        ],
+        "wikipediaLink": true
       },
       {
         "id": "1",
         "name": "womenAndSexRoles",
-        "label": "topics.gender.womenAndSexRoles.title",
-        "articles": []
+        "i18nKey": "womenAndSexRoles",
+        "articles": [],
+        "externalResources": []
       }
     ]
   },
   {
     "id": "1",
-    "name": "biology",
-    "label": "topics.biology.title",
+    "i18nKey": "biology",
     "subtopics": []
   },
   {
     "id": "2",
-    "name": "religion",
-    "label": "topics.religion.title",
+    "i18nKey": "religion",
     "subtopics": []
   },
   {
     "id": "3",
-    "name": "diversity",
-    "label": "topics.diversity.title",
+    "i18nKey": "diversity",
     "subtopics": []
   },
   {
     "id": "4",
-    "name": "new-world-order",
-    "label": "topics.nwo.title",
+    "i18nKey": "nwo",
     "subtopics": []
   }
 ]
