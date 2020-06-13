@@ -22,7 +22,7 @@
         class="flex items-center p-4"
       >
         <Icon class="h-20 w-20 mr-8" type="link" />
-        <div>{{ $t("ui.learnMore") }}</div>
+        <div class="underline">{{ $t("ui.learnMore") }}</div>
       </nuxt-link>
     </div>
 
