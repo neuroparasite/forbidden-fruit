@@ -1,11 +1,24 @@
 <template>
-  <div class="flex flex-col p-16 bg-primary-light" :id="article.id">
-    <div class="text-18 text-accent mb-8">{{ article.year }}</div>
+  <div class="flex flex-col p-16 bg-primary-light" :id="article.i18nKey">
+    <div class="flex justify-between text-18 text-accent mb-8">
+      <div>{{ article.year }}</div>
+      <div v-if="devilsAdvocatesByKeys" class="flex flex-col">
+        <div
+          v-for="devilsAdvocate in devilsAdvocatesByKeys"
+          :key="devilsAdvocate.i18nKey"
+          class="mb-4 last:mb-0"
+        >
+          <div>
+            {{ devilsAdvocate.firstname + " " + devilsAdvocate.lastname }}
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="font-medium text-18 mb-16">{{ article.title }}</div>
 
     <div class="grid grid-cols-3 gap-16 mb-16">
-      <FTag v-for="tag in tagsByNames" :key="tag.name" :tag="tag" />
+      <FTag v-for="tag in tagsByKeys" :key="tag.i18nKey" :tag="tag" />
     </div>
 
     <div class="flex justify-between text-accent">
@@ -44,16 +57,22 @@ import { Article, Tag } from "~/types";
     FTag,
   },
 })
-export default class Resource extends Vue {
+export default class FArticle extends Vue {
   @Prop({ required: true })
   public article!: Article;
 
   get articleURL(): string {
-    return `https://forbidden-fruit.now.sh${this.$route.path}#${this.article.id}`;
+    return `https://forbidden-fruit.now.sh${this.$route.path}#${this.article.i18nKey}`;
   }
 
-  get tagsByNames(): Tag {
-    return this.$store.getters["tagsByNames"](this.article.tagNames);
+  get tagsByKeys(): Tag {
+    return this.$store.getters["tagsByKeys"](this.article.tagKeys);
+  }
+
+  get devilsAdvocatesByKeys(): Tag {
+    return this.$store.getters["devilsAdvocatesByKeys"](
+      this.article.devilsAdvocateKeys
+    );
   }
 
   copyLink() {
