@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <div class="mb-20">
+        <div class="text-14 mb-20">
           {{ $t(`tags.${currentTag.i18nKey}.description`) }}
         </div>
 
