@@ -23,7 +23,7 @@ export default class FTag extends Vue {
   tag!: Tag;
 
   showTagOverlay() {
-    this.$store.commit("setCurrentTag", this.tag.name);
+    this.$store.commit("setCurrentTag", this.tag.i18nKey);
   }
 }
 </script>

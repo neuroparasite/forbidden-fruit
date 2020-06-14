@@ -16,8 +16,8 @@
       }}
     </div>
 
-    <div class="grid grid-cols-3 gap-16 mb-16">
-      <FTag v-for="tag in tagsByNames" :key="tag.name" :tag="tag" />
+    <div v-if="tagsByKeys" class="grid grid-cols-3 gap-16 mb-16">
+      <FTag v-for="tag in tagsByKeys" :key="tag.i18nKey" :tag="tag" />
     </div>
 
     <div class="flex justify-end text-accent">
@@ -65,8 +65,8 @@ export default class FExternalResource extends Vue {
   @Prop({ required: true })
   public i18nKeySubtopic!: string;
 
-  get tagsByNames(): Tag {
-    return this.$store.getters["tagsByNames"](this.externalResource.tagNames);
+  get tagsByKeys(): Tag {
+    return this.$store.getters["tagsByKeys"](this.externalResource.tagKeys);
   }
 }
 </script>
