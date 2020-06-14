@@ -1,16 +1,22 @@
-import devils_advocates from "~/static/data/devils_advocates.json";
 import tags from "~/static/data/tags.json";
 import topics from "~/static/data/topics.json";
-import { Topic, State, Subtopic } from "~/types";
+import { DevilsAdvocate, Topic, Subtopic, Tag } from "~/types";
+
+interface State {
+  currentTopic: Topic | undefined;
+  currentSubtopic: Subtopic | undefined;
+  currentTag: Tag | undefined;
+
+  topics: Topic[];
+  tags: Tag[];
+}
 
 export const state = (): State => ({
   currentTopic: undefined,
   currentSubtopic: undefined,
   currentTag: undefined,
-  currentDevilsAdvocate: undefined,
 
   topics,
-  devilsAdvocates: devils_advocates,
   tags,
 });
 
@@ -34,11 +40,6 @@ export const mutations = {
   unsetCurrentTag(state: State) {
     state.currentTag = undefined;
   },
-  setCurrentDevilsAdvocate(state: State, i18nKey: string) {
-    state.currentDevilsAdvocate = state.devilsAdvocates.find(
-      (d) => d.i18nKey === i18nKey
-    );
-  },
 };
 
 export const getters = {
@@ -51,23 +52,30 @@ export const getters = {
   currentTag: (state: State) => {
     return state.currentTag;
   },
-  currentDevilsAdvocate: (state: State) => {
-    return state.currentDevilsAdvocate;
-  },
   topics: (state: State) => {
     return state.topics;
   },
   subtopics: (_: State, getters: any) => (topicName: string) => {
-    const topic = getters["topics"].find((t: Topic) => t.i18nKey === topicName);
+    const topic = getters["topics"].find(
+      (topic: Topic) => topic.i18nKey === topicName
+    );
     return topic?.subtopics;
   },
-  devilsAdvocates: (state: State) => {
-    return state.devilsAdvocates;
+  articles: (_: State, getters: any) => {
+    const subtopics: Subtopic[] = getters["subtopics"];
+    return subtopics.map((subtopic: Subtopic) => subtopic.articles);
   },
-  devilsAdvocatesByKeys: (state: State) => (tagKeys: string[]) => {
-    return state.devilsAdvocates.filter((devilsAdvocate) =>
-      tagKeys.includes(devilsAdvocate.i18nKey)
-    );
+  literature: (_: State, getters: any) => {
+    const subtopics: Subtopic[] = getters["subtopics"];
+    return subtopics.map((subtopic: Subtopic) => subtopic.literature);
+  },
+  studies: (_: State, getters: any) => {
+    const subtopics: Subtopic[] = getters["subtopics"];
+    return subtopics.map((subtopic: Subtopic) => subtopic.studies);
+  },
+  videos: (_: State, getters: any) => {
+    const subtopics: Subtopic[] = getters["subtopics"];
+    return subtopics.map((subtopic: Subtopic) => subtopic.videos);
   },
   tags: (state: State) => {
     return state.tags;

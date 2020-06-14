@@ -27,7 +27,7 @@ import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 import FDevilsAdvocate from "~/components/FDevilsAdvocate.vue";
 
-import { Topic } from "~/types";
+import { Topic, DevilsAdvocate } from "~/types";
 
 @Component({
   components: {
@@ -36,7 +36,7 @@ import { Topic } from "~/types";
     FDevilsAdvocate,
   },
   computed: {
-    ...mapGetters(["currentTopic", "devilsAdvocates"]),
+    ...mapGetters(["currentTopic"]),
   },
   validate({ params, store }: any) {
     const topics: Topic[] = store.getters["topics"];
@@ -44,6 +44,10 @@ import { Topic } from "~/types";
   },
 })
 export default class DevilsAdvocatesPage extends Vue {
+  get devilsAdvocates(): DevilsAdvocate[] {
+    return this.$store.getters["devilsAdvocate/list"];
+  }
+
   beforeMount() {
     this.$store.commit("setCurrentTopic", this.$route.params.topic);
   }

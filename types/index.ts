@@ -1,14 +1,3 @@
-export interface State {
-  currentTopic: Topic | undefined;
-  currentSubtopic: Subtopic | undefined;
-  currentTag: Tag | undefined;
-  currentDevilsAdvocate: DevilsAdvocate | undefined;
-
-  topics: Topic[];
-  tags: Tag[];
-  devilsAdvocates: DevilsAdvocate[];
-}
-
 export interface Tag {
   i18nKey: string;
   wikipediaLink?: boolean;
