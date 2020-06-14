@@ -31,10 +31,10 @@
         `/topics/${currentTopic.i18nKey}/${currentSubtopic.i18nKey}/external_resources`
       "
       label="externalResources.title"
-      class="ml-32"
+      class="ml-32 mb-64"
     />
 
-    <div class="ml-32 mb-32">
+    <div class="ml-32 mb-64">
       <div class="text-24 mb-24">{{ $t("general.toc") }}</div>
       <Link
         v-if="currentSubtopic.articles.length"
