@@ -8,18 +8,21 @@
       <FLink
         :link="`/topics/${currentTopic.i18nKey}/devils_advocates`"
         label="devilsAdvocates.title"
+        :disabled="!!!devilsAdvocates.length"
         class="ml-16"
       />
 
-      <div class="text-24 mb-32">{{ $t("topics.subtopics") }}</div>
+      <div v-if="!!subtopics.length">
+        <div class="text-24 mb-32">{{ $t("topics.subtopics") }}</div>
 
-      <FLink
-        v-for="subtopic in subtopics"
-        :key="subtopic.id"
-        :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
-        :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
-        class="ml-16"
-      />
+        <FLink
+          v-for="subtopic in subtopics"
+          :key="subtopic.id"
+          :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
+          :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
+          class="ml-16"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +37,7 @@ import FLink from "~/components/FLink.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 
-import { Topic } from "~/types";
+import { Topic, DevilsAdvocate, Subtopic } from "~/types";
 
 @Component({
   components: {
@@ -52,8 +55,14 @@ export default class TopicPage extends Vue {
     return this.$store.getters["currentTopic"];
   }
 
-  get subtopics() {
+  get subtopics(): Subtopic[] {
     return this.$store.getters["subtopicsByTopic"](this.currentTopic.i18nKey);
+  }
+
+  get devilsAdvocates(): DevilsAdvocate[] {
+    return this.$store.getters["devilsAdvocates/byTopic"](
+      this.currentTopic.i18nKey
+    );
   }
 
   beforeMount() {
