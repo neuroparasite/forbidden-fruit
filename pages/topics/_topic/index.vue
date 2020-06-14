@@ -4,15 +4,22 @@
 
     <FHeader :title="`topics.${currentTopic.i18nKey}.title`" />
 
-    <div class="flex flex-col items-center justify-center mt-56">
-      <div>
-        <Link
-          v-for="subtopic in currentTopic.subtopics"
-          :key="subtopic.id"
-          :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
-          :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
-        />
-      </div>
+    <div class="flex flex-col justify-center mt-32 ml-32">
+      <Link
+        :link="`/topics/${currentTopic.i18nKey}/devils_advocates`"
+        label="devilsAdvocates.title"
+        class="ml-16"
+      />
+
+      <div class="text-24 mb-32">{{ $t("topics.subtopics") }}</div>
+
+      <Link
+        v-for="subtopic in currentTopic.subtopics"
+        :key="subtopic.id"
+        :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
+        :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
+        class="ml-16"
+      />
     </div>
   </div>
 </template>
