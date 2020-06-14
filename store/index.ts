@@ -99,6 +99,11 @@ export const getters: GetterTree<RootState, RootState> = {
       (article) => article.subtopicKey === subtopicKey
     );
   },
+  articlesByDevilsAdvocate: (state: State) => (devilsAdvocateKey: string) => {
+    return state.articles.filter((article) =>
+      article.devilsAdvocateKeys?.includes(devilsAdvocateKey)
+    );
+  },
   literature: (state: State) => {
     return state.literature;
   },
@@ -107,17 +112,32 @@ export const getters: GetterTree<RootState, RootState> = {
       (literature) => literature.subtopicKey === subtopicKey
     );
   },
+  literatureByDevilsAdvocate: (state: State) => (devilsAdvocateKey: string) => {
+    return state.literature.filter((literature) =>
+      literature.devilsAdvocateKeys?.includes(devilsAdvocateKey)
+    );
+  },
   studies: (state: State) => {
     return state.studies;
   },
   studiesBySubtopic: (state: State) => (subtopicKey: string) => {
     return state.studies.filter((study) => study.subtopicKey === subtopicKey);
   },
+  studiesByDevilsAdvocate: (state: State) => (devilsAdvocateKey: string) => {
+    return state.studies.filter((study) =>
+      study.devilsAdvocateKeys?.includes(devilsAdvocateKey)
+    );
+  },
   videos: (state: State) => {
     return state.videos;
   },
   videosBySubtopic: (state: State) => (subtopicKey: string) => {
     return state.videos.filter((video) => video.subtopicKey === subtopicKey);
+  },
+  videosByDevilsAdvocate: (state: State) => (devilsAdvocateKey: string) => {
+    return state.videos.filter((video) =>
+      video.devilsAdvocateKeys?.includes(devilsAdvocateKey)
+    );
   },
   tags: (state: State) => {
     return state.tags;
