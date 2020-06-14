@@ -6,7 +6,7 @@
     class="flex items-center p-4"
   >
     <Icon class="h-20 w-20 mr-8" type="linkExternal" />
-    <div>{{ $t(label) }}</div>
+    <div class="underline">{{ $t(label) }}</div>
   </a>
 </template>
 
