@@ -10,6 +10,7 @@
         :key="topic.id"
         :link="`/topics/${topic.i18nKey}`"
         :label="`topics.${topic.i18nKey}.title`"
+        :disabled="!hasSubtopic(topic.i18nKey)"
       />
     </div>
   </div>
@@ -35,6 +36,10 @@ import NavBar from "~/components/NavBar.vue";
 export default class TopicsPage extends Vue {
   get topics() {
     return this.$store.getters["topics"];
+  }
+
+  hasSubtopic(topicKey: string) {
+    return !!this.$store.getters["subtopicsByTopic"](topicKey).length;
   }
 
   beforeMount() {
