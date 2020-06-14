@@ -3,13 +3,13 @@
     <div class="flex items-center mb-16">
       <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
       <div class="flex flex-col text-32">
-        <div>{{ devilsAdvocate.firstname }}</div>
-        <div class="font-bold">{{ devilsAdvocate.lastname }}</div>
+        <div>
+          {{ $t(`devilsAdvocates.${devilsAdvocate.i18nKey}.firstname`) }}
+        </div>
+        <div class="font-bold">
+          {{ $t(`devilsAdvocates.${devilsAdvocate.i18nKey}.lastname`) }}
+        </div>
       </div>
-    </div>
-
-    <div class="text-14 mb-16">
-      {{ $t(`devilsAdvocates.${devilsAdvocate.i18nKey}.description`) }}
     </div>
 
     <div v-if="tagsByKeys" class="grid grid-cols-3 gap-16 mb-16">
