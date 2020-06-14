@@ -1,7 +1,7 @@
 <template>
   <FFade>
     <div v-if="!scrolled" class="flex flex-col items-center absolute bottom-20">
-      <div class="text-12 mb-8">{{ $t("scroll.down") }}</div>
+      <div class="text-12 mb-8">{{ $t(label) }}</div>
       <Icon class="h-24 w-24" type="arrowDown" />
     </div>
   </FFade>
@@ -23,6 +23,9 @@ import Icon from "~/components/Icon.vue";
   },
 })
 export default class ScrollDownIndicator extends Vue {
+  @Prop({ default: "scroll.down" })
+  label!: string;
+
   scrolled = false;
 
   handleScroll() {
