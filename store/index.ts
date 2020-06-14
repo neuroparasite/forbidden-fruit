@@ -1,4 +1,3 @@
-import discover_links from "~/static/data/discover_links.json";
 import devils_advocates from "~/static/data/devils_advocates.json";
 import tags from "~/static/data/tags.json";
 import topics from "~/static/data/topics.json";
@@ -8,8 +7,8 @@ export const state = (): State => ({
   currentTopic: undefined,
   currentSubtopic: undefined,
   currentTag: undefined,
+  currentDevilsAdvocate: undefined,
 
-  discoverLinks: discover_links,
   topics,
   devilsAdvocates: devils_advocates,
   tags,
@@ -21,21 +20,24 @@ export const mutations = {
     state.currentSubtopic = undefined;
     state.currentTag = undefined;
   },
-  setCurrentTopic(state: State, topicName: string) {
-    state.currentTopic = state.topics.find(
-      (t: Topic) => t.i18nKey === topicName
-    );
+  setCurrentTopic(state: State, i18nKey: string) {
+    state.currentTopic = state.topics.find((t: Topic) => t.i18nKey === i18nKey);
   },
-  setCurrentSubtopic(state: State, subtopicName: string) {
+  setCurrentSubtopic(state: State, i18nKey: string) {
     state.currentSubtopic = state.currentTopic?.subtopics.find(
-      (s: Subtopic) => s.i18nKey === subtopicName
+      (s: Subtopic) => s.i18nKey === i18nKey
     );
   },
-  setCurrentTag(state: State, tagName: string) {
-    state.currentTag = state.tags.find((t) => t.name === tagName);
+  setCurrentTag(state: State, i18nKey: string) {
+    state.currentTag = state.tags.find((t) => t.i18nKey === i18nKey);
   },
   unsetCurrentTag(state: State) {
     state.currentTag = undefined;
+  },
+  setCurrentDevilsAdvocate(state: State, i18nKey: string) {
+    state.currentDevilsAdvocate = state.devilsAdvocates.find(
+      (d) => d.i18nKey === i18nKey
+    );
   },
 };
 
@@ -49,8 +51,8 @@ export const getters = {
   currentTag: (state: State) => {
     return state.currentTag;
   },
-  discoverLinks: (state: State) => {
-    return state.discoverLinks;
+  currentDevilsAdvocate: (state: State) => {
+    return state.currentDevilsAdvocate;
   },
   topics: (state: State) => {
     return state.topics;
@@ -62,10 +64,15 @@ export const getters = {
   devilsAdvocates: (state: State) => {
     return state.devilsAdvocates;
   },
+  devilsAdvocatesByKeys: (state: State) => (tagKeys: string[]) => {
+    return state.devilsAdvocates.filter((devilsAdvocate) =>
+      tagKeys.includes(devilsAdvocate.i18nKey)
+    );
+  },
   tags: (state: State) => {
     return state.tags;
   },
-  tagsByNames: (state: State) => (tagNames: string[]) => {
-    return state.tags.filter((tag) => tagNames.includes(tag.name));
+  tagsByKeys: (state: State) => (tagKeys: string[]) => {
+    return state.tags.filter((tag) => tagKeys.includes(tag.i18nKey));
   },
 };

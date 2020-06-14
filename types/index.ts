@@ -2,69 +2,95 @@ export interface State {
   currentTopic: Topic | undefined;
   currentSubtopic: Subtopic | undefined;
   currentTag: Tag | undefined;
+  currentDevilsAdvocate: DevilsAdvocate | undefined;
 
-  discoverLinks: DiscoverLink[];
   topics: Topic[];
   tags: Tag[];
   devilsAdvocates: DevilsAdvocate[];
-  // externalSources: ExternalSource[];
-  // audios: Resource[];
-  // literatures: Resource[];
-  // studies: Resource[];
-  // videos: Video[];
-  // topics: Topic[];
 }
 
 export interface Tag {
-  name: string;
   i18nKey: string;
   wikipediaLink?: boolean;
 }
 
 export interface DevilsAdvocate {
-  name: string;
-  description: string;
-  values: string[];
-  background: string;
-  resourceIds: number[];
-  topResourceIds: number[];
+  firstname: string;
+  lastname: string;
+  i18nKey: string;
   homepage: string;
   imageLink: string;
+  tagKeys: string[];
+  socialMedia?: SocialMedia;
+}
+
+export interface SocialMedia {
+  youtube?: string;
+  twitter?: string;
+  instagram?: string;
+  facebook?: string;
+  bitchute?: string;
 }
 
 export interface Topic {
   id: string;
   i18nKey: string;
-  //description: string;
   subtopics: Subtopic[];
 }
 
 export interface Subtopic {
   id: string;
   i18nKey: string;
-  articles: Article[];
+  articles?: Article[];
+  literature?: Literature[];
+  studies?: Study[];
+  videos?: Video[];
   externalResources: ExternalResource[];
   wikipediaLink?: boolean;
 }
 
 export interface Article {
-  id: string;
-  year: number;
   title: string;
-  description: string;
-  tagNames: string[];
+  i18nKey: string;
+  year: number;
+  tagKeys: string[];
   source: string;
+  devilsAdvocateKeys?: string[];
+  authors?: string[];
+}
+
+export interface Literature {
+  title: string;
+  i18nKey: string;
+  year: number;
+  tagKeys: string[];
+  purchaseLink: boolean;
+  devilsAdvocateKeys?: string[];
+  authors?: string[];
+}
+
+export interface Study {
+  title: string;
+  i18nKey: string;
+  year: number;
+  tagKeys: string[];
+  source: string;
+  devilsAdvocateKeys?: string[];
+  authors?: string[];
+}
+
+export interface Video {
+  title: string;
+  i18nKey: string;
+  year: number;
+  tagKeys: string[];
+  embedUrl: string;
+  devilsAdvocateKeys?: string[];
+  authors?: string[];
 }
 
 export interface ExternalResource {
   i18nKey: string;
-  tagNames: string[];
+  tagKeys: string[];
   source: string;
-}
-
-export interface DiscoverLink {
-  id: string;
-  link: string;
-  label: string;
-  disabled: boolean;
 }

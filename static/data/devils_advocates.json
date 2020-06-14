@@ -1,12 +1,13 @@
 [
   {
-    "name": "a",
-    "description": "description",
-    "values": [""],
-    "background": "a",
-    "homepage": "",
-    "resourceIds": [0],
-    "topResourceIds": [0],
-    "imageLink": "ohyeahthisisimage"
+    "firstname": "Paul",
+    "lastname": "Elam",
+    "i18nKey": "paulElam",
+    "homepage": "https://www.paulelam.com",
+    "imageLink": "ohyeahthisisimage",
+    "tagKeys": ["mensRights"],
+    "socialMedia": {
+      "youtube": "https://www.youtube.com/channel/UCXNNG0ej_6rU9SxCZ4dyq6w"
+    }
   }
 ]

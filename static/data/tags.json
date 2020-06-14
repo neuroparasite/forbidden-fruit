@@ -1,16 +1,18 @@
 [
   {
-    "name": "unverified",
-    "i18nKey": "unverified"
+    "i18nKey": "biopsychosocial",
+    "wikipediaLink": true
   },
   {
-    "name": "scientifically proven",
     "i18nKey": "scientificallyProven",
     "wikipediaLink": true
   },
   {
-    "name": "anecdotal evidence",
     "i18nKey": "anecdotalEvidence",
+    "wikipediaLink": true
+  },
+  {
+    "i18nKey": "mensRights",
     "wikipediaLink": true
   }
 ]

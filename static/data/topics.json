@@ -6,52 +6,21 @@
       {
         "id": "0",
         "i18nKey": "gynocentrism",
-        "articles": [
+        "articles": [],
+        "videos": [
           {
-            "id": "0",
-            "year": 2001,
-            "title": "resource",
-            "description": "description",
-            "source": "https://example.com",
-            "tagNames": ["unverified"]
-          },
-          {
-            "id": "1",
-            "year": 2001,
-            "title": "resource",
-            "description": "description",
-            "source": "https://example.com",
-            "tagNames": ["unverified"]
-          },
-          {
-            "id": "2",
-            "year": 2001,
-            "title": "resource",
-            "description": "description",
-            "source": "https://example.com",
-            "tagNames": ["unverified"]
-          },
-          {
-            "id": "3",
-            "year": 2001,
-            "title": "resource",
-            "description": "description",
-            "source": "https://example.com",
-            "tagNames": ["unverified"]
-          },
-          {
-            "id": "4",
-            "year": 2001,
-            "title": "resource",
-            "description": "description",
-            "source": "https://example.com",
-            "tagNames": ["unverified"]
+            "title": "Chasing the Dragon",
+            "i18nKey": "chasingTheDragon",
+            "year": 2016,
+            "embedUrl": "https://www.youtube-nocookie.com/embed/VygKQV-hEpY",
+            "tagKeys": ["biopsychosocial"],
+            "devilsAdvocateKeys": ["paulElam"]
           }
         ],
         "externalResources": [
           {
             "i18nKey": "gynocentrismAndItsCulturalOrigins",
-            "tagNames": ["anecdotal evidence"],
+            "tagKeys": ["anecdotalEvidence"],
             "source": "https://gynocentrism.com"
           }
         ],
