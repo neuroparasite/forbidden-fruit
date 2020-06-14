@@ -3,7 +3,7 @@
     :href="link"
     target="_blank"
     rel="noopener noreferrer"
-    class="flex items-center p-4 mb-24"
+    class="flex items-center p-4"
   >
     <Icon class="h-20 w-20 mr-8" type="linkExternal" />
     <div>{{ $t(label) }}</div>
@@ -15,7 +15,6 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
 import Icon from "~/components/Icon.vue";
 
