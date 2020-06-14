@@ -29,7 +29,7 @@ import { mapGetters } from "vuex";
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
-import Resource from "~/components/Resource.vue";
+import FArticle from "~/components/FArticle.vue";
 import FFade from "~/components/transitions/FFade.vue";
 import FExternalResource from "~/components/FExternalResource.vue";
 
@@ -40,7 +40,7 @@ import { Subtopic } from "~/types";
     FHeader,
     Link,
     NavBar,
-    Resource,
+    FArticle,
     FFade,
     FExternalResource,
   },
