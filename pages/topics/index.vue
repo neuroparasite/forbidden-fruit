@@ -4,15 +4,13 @@
 
     <FHeader title="topics.title" />
 
-    <div class="flex flex-col items-center justify-center mt-56">
-      <div>
-        <Link
-          v-for="topic in topics"
-          :key="topic.id"
-          :link="`/topics/${topic.i18nKey}`"
-          :label="`topics.${topic.i18nKey}.title`"
-        />
-      </div>
+    <div class="flex flex-col justify-center mt-32 ml-48">
+      <Link
+        v-for="topic in topics"
+        :key="topic.id"
+        :link="`/topics/${topic.i18nKey}`"
+        :label="`topics.${topic.i18nKey}.title`"
+      />
     </div>
   </div>
 </template>
