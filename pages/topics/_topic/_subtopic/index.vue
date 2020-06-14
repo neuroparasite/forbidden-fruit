@@ -34,12 +34,39 @@
       class="ml-32"
     />
 
-    <Resource
-      v-for="article in currentSubtopic.articles"
-      :key="article.id"
-      :article="article"
-      class="mb-8 last:mb-0"
-    />
+    <div class="ml-32 mb-32">
+      <div class="text-24 mb-24">{{ $t("general.toc") }}</div>
+      <Link
+        v-if="currentSubtopic.articles.length"
+        :link="`${currentSubtopic.i18nKey}#articles`"
+        label="articles.title"
+      />
+      <Link
+        v-if="currentSubtopic.videos.length"
+        :link="`${currentSubtopic.i18nKey}#videos`"
+        label="videos.title"
+      />
+    </div>
+
+    <div id="articles" v-if="currentSubtopic.articles.length" class="mb-16">
+      <div class="text-24 ml-32 mb-16">{{ $t("articles.title") }}</div>
+      <FArticle
+        v-for="article in currentSubtopic.articles"
+        :key="article.i18nKey"
+        :article="article"
+        class="mb-8 last:mb-0"
+      />
+    </div>
+
+    <div id="videos" v-if="currentSubtopic.videos.length">
+      <div class="text-24 ml-32 mb-16">{{ $t("videos.title") }}</div>
+      <FVideo
+        v-for="video in currentSubtopic.videos"
+        :key="video.i18nKey"
+        :video="video"
+        class="mb-8 last:mb-0"
+      />
+    </div>
 
     <FTagOverlay />
   </div>
@@ -55,7 +82,8 @@ import { mapGetters } from "vuex";
 import Link from "~/components/Link.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
-import Resource from "~/components/Resource.vue";
+import FArticle from "~/components/FArticle.vue";
+import FVideo from "~/components/FVideo.vue";
 import FTagOverlay from "~/components/FTagOverlay.vue";
 import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import FFade from "~/components/transitions/FFade.vue";
@@ -68,7 +96,8 @@ import { Subtopic } from "~/types";
     FHeader,
     Link,
     NavBar,
-    Resource,
+    FArticle,
+    FVideo,
     Icon,
     FTagOverlay,
     FWikipediaLink,
