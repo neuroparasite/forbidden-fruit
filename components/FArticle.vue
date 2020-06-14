@@ -22,20 +22,9 @@
     </div>
 
     <div class="flex justify-between text-accent">
-      <button class="flex items-center p-4" @click="copyLink()">
-        <Icon class="h-16 w-16 mr-8" type="copy" />
-        <div>{{ $t("ui.copyLink") }}</div>
-      </button>
+      <FCopyLinkButton :link="articleURL" />
 
-      <a
-        :href="article.source"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center p-4"
-      >
-        <Icon class="h-20 w-20 mr-8" type="linkExternal" />
-        <div>{{ $t("ui.source") }}</div>
-      </a>
+      <FExternalLink :link="article.source" label="ui.source" />
     </div>
   </div>
 </template>
@@ -45,15 +34,16 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
-import Icon from "~/components/Icon.vue";
+import FCopyLinkButton from "~/components/FCopyLinkButton.vue";
+import FExternalLink from "~/components/FExternalLink.vue";
 import FTag from "~/components/FTag.vue";
 import { Article, Tag } from "~/types";
 
 @Component({
   components: {
-    Icon,
+    FCopyLinkButton,
+    FExternalLink,
     FTag,
   },
 })
@@ -72,17 +62,6 @@ export default class FArticle extends Vue {
   get devilsAdvocatesByKeys(): Tag {
     return this.$store.getters["devilsAdvocatesByKeys"](
       this.article.devilsAdvocateKeys
-    );
-  }
-
-  copyLink() {
-    navigator.clipboard.writeText(this.articleURL).then(
-      () => {
-        /* clipboard successfully set */
-      },
-      () => {
-        /* clipboard write failed */
-      }
     );
   }
 }

@@ -32,10 +32,7 @@
     </div>
 
     <div class="flex justify-start text-accent">
-      <button class="flex items-center p-4" @click="copyLink()">
-        <Icon class="h-16 w-16 mr-8" type="copy" />
-        <div>{{ $t("ui.copyLink") }}</div>
-      </button>
+      <FCopyLinkButton :link="videoURL" />
     </div>
   </div>
 </template>
@@ -45,15 +42,14 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
-import Icon from "~/components/Icon.vue";
+import FCopyLinkButton from "~/components/FCopyLinkButton.vue";
 import FTag from "~/components/FTag.vue";
 import { Tag, Video } from "~/types";
 
 @Component({
   components: {
-    Icon,
+    FCopyLinkButton,
     FTag,
   },
 })
@@ -72,17 +68,6 @@ export default class FVideo extends Vue {
   get devilsAdvocatesByKeys(): Tag {
     return this.$store.getters["devilsAdvocatesByKeys"](
       this.video.devilsAdvocateKeys
-    );
-  }
-
-  copyLink() {
-    navigator.clipboard.writeText(this.videoURL).then(
-      () => {
-        /* clipboard successfully set */
-      },
-      () => {
-        /* clipboard write failed */
-      }
     );
   }
 }
