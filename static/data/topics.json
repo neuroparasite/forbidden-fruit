@@ -1,58 +1,22 @@
 [
   {
     "id": "0",
-    "i18nKey": "gender",
-    "subtopics": [
-      {
-        "id": "0",
-        "i18nKey": "gynocentrism",
-        "articles": [],
-        "videos": [
-          {
-            "title": "Chasing the Dragon",
-            "i18nKey": "chasingTheDragon",
-            "year": 2016,
-            "embedUrl": "https://www.youtube-nocookie.com/embed/VygKQV-hEpY",
-            "tagKeys": ["biopsychosocial"],
-            "devilsAdvocateKeys": ["paulElam"]
-          }
-        ],
-        "externalResources": [
-          {
-            "i18nKey": "gynocentrismAndItsCulturalOrigins",
-            "tagKeys": ["anecdotalEvidence"],
-            "source": "https://gynocentrism.com"
-          }
-        ],
-        "wikipediaLink": true
-      },
-      {
-        "id": "1",
-        "name": "womenAndSexRoles",
-        "i18nKey": "womenAndSexRoles",
-        "articles": [],
-        "externalResources": []
-      }
-    ]
+    "i18nKey": "gender"
   },
   {
     "id": "1",
-    "i18nKey": "biology",
-    "subtopics": []
+    "i18nKey": "biology"
   },
   {
     "id": "2",
-    "i18nKey": "religion",
-    "subtopics": []
+    "i18nKey": "religion"
   },
   {
     "id": "3",
-    "i18nKey": "diversity",
-    "subtopics": []
+    "i18nKey": "diversity"
   },
   {
     "id": "4",
-    "i18nKey": "nwo",
-    "subtopics": []
+    "i18nKey": "nwo"
   }
 ]

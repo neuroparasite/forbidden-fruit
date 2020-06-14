@@ -5,7 +5,7 @@
     <FHeader :title="`topics.${currentTopic.i18nKey}.title`" />
 
     <div class="flex flex-col justify-center mt-32 ml-32">
-      <Link
+      <FLink
         :link="`/topics/${currentTopic.i18nKey}/devils_advocates`"
         label="devilsAdvocates.title"
         class="ml-16"
@@ -13,8 +13,8 @@
 
       <div class="text-24 mb-32">{{ $t("topics.subtopics") }}</div>
 
-      <Link
-        v-for="subtopic in currentTopic.subtopics"
+      <FLink
+        v-for="subtopic in subtopics"
         :key="subtopic.id"
         :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
         :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
@@ -29,9 +29,8 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
-import Link from "~/components/Link.vue";
+import FLink from "~/components/FLink.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 
@@ -40,11 +39,8 @@ import { Topic } from "~/types";
 @Component({
   components: {
     FHeader,
-    Link,
+    FLink,
     NavBar,
-  },
-  computed: {
-    ...mapGetters(["currentTopic"]),
   },
   validate({ params, store }: any) {
     const topics: Topic[] = store.getters["topics"];
@@ -52,6 +48,14 @@ import { Topic } from "~/types";
   },
 })
 export default class TopicPage extends Vue {
+  get currentTopic(): Topic {
+    return this.$store.getters["currentTopic"];
+  }
+
+  get subtopics() {
+    return this.$store.getters["subtopicsByTopic"](this.currentTopic.i18nKey);
+  }
+
   beforeMount() {
     this.$store.commit("setCurrentTopic", this.$route.params.topic);
   }

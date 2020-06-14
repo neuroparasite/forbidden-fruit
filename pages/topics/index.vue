@@ -5,7 +5,7 @@
     <FHeader title="topics.title" />
 
     <div class="flex flex-col justify-center mt-32 ml-48">
-      <Link
+      <FLink
         v-for="topic in topics"
         :key="topic.id"
         :link="`/topics/${topic.i18nKey}`"
@@ -20,23 +20,23 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
 import FHeader from "~/components/FHeader.vue";
-import Link from "~/components/Link.vue";
+import FLink from "~/components/FLink.vue";
 import NavBar from "~/components/NavBar.vue";
 
 @Component({
   components: {
     FHeader,
-    Link,
+    FLink,
     NavBar,
-  },
-  computed: {
-    ...mapGetters(["topics"]),
   },
 })
 export default class TopicsPage extends Vue {
+  get topics() {
+    return this.$store.getters["topics"];
+  }
+
   beforeMount() {
     this.$store.commit("resetState");
   }

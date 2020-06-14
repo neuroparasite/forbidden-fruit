@@ -1,0 +1,14 @@
+[
+  {
+    "id": "0",
+    "topicKey": "gender",
+    "i18nKey": "gynocentrism",
+    "wikipediaLink": true
+  },
+  {
+    "id": "1",
+    "topicKey": "gender",
+    "name": "womenAndSexRoles",
+    "i18nKey": "womenAndSexRoles"
+  }
+]

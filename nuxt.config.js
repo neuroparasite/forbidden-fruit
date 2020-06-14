@@ -152,6 +152,9 @@ export default {
           },
           devilsAdvocates: {
             title: "Devil's Advocates",
+            homepage: "Homepage",
+            socialMedia: "Social Media",
+            works: "Works",
             paulElam: {
               description: "a",
               background: "b",

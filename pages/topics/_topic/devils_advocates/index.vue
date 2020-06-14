@@ -21,7 +21,6 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
@@ -35,15 +34,16 @@ import { Topic, DevilsAdvocate } from "~/types";
     NavBar,
     FDevilsAdvocate,
   },
-  computed: {
-    ...mapGetters(["currentTopic"]),
-  },
   validate({ params, store }: any) {
     const topics: Topic[] = store.getters["topics"];
     return !!topics.find((t) => t.i18nKey === params.topic);
   },
 })
 export default class DevilsAdvocatesPage extends Vue {
+  get currentTopic(): Topic {
+    return this.$store.getters["currentTopic"];
+  }
+
   get devilsAdvocates(): DevilsAdvocate[] {
     return this.$store.getters["devilsAdvocates/list"];
   }

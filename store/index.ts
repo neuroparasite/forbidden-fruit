@@ -1,6 +1,22 @@
+import { GetterTree, MutationTree } from "vuex";
+import articles from "~/static/data/articles.json";
 import tags from "~/static/data/tags.json";
 import topics from "~/static/data/topics.json";
-import { DevilsAdvocate, Topic, Subtopic, Tag } from "~/types";
+import externalResources from "~/static/data/externalResources.json";
+import literature from "~/static/data/literature.json";
+import studies from "~/static/data/studies.json";
+import subtopics from "~/static/data/subtopics.json";
+import videos from "~/static/data/videos.json";
+import {
+  Article,
+  Literature,
+  Study,
+  Subtopic,
+  Tag,
+  Topic,
+  Video,
+  ExternalResource,
+} from "~/types";
 
 interface State {
   currentTopic: Topic | undefined;
@@ -8,7 +24,13 @@ interface State {
   currentTag: Tag | undefined;
 
   topics: Topic[];
+  subtopics: Subtopic[];
+  articles: Article[];
+  literature: Literature[];
+  studies: Study[];
+  videos: Video[];
   tags: Tag[];
+  externalResources: ExternalResource[];
 }
 
 export const state = (): State => ({
@@ -17,10 +39,18 @@ export const state = (): State => ({
   currentTag: undefined,
 
   topics,
+  subtopics,
+  articles,
+  literature,
+  studies,
+  videos,
   tags,
+  externalResources,
 });
 
-export const mutations = {
+export type RootState = ReturnType<typeof state>;
+
+export const mutations: MutationTree<RootState> = {
   resetState(state: State) {
     state.currentTopic = undefined;
     state.currentSubtopic = undefined;
@@ -30,7 +60,7 @@ export const mutations = {
     state.currentTopic = state.topics.find((t: Topic) => t.i18nKey === i18nKey);
   },
   setCurrentSubtopic(state: State, i18nKey: string) {
-    state.currentSubtopic = state.currentTopic?.subtopics.find(
+    state.currentSubtopic = state.subtopics.find(
       (s: Subtopic) => s.i18nKey === i18nKey
     );
   },
@@ -42,7 +72,7 @@ export const mutations = {
   },
 };
 
-export const getters = {
+export const getters: GetterTree<RootState, RootState> = {
   currentTopic: (state: State) => {
     return state.currentTopic;
   },
@@ -55,32 +85,52 @@ export const getters = {
   topics: (state: State) => {
     return state.topics;
   },
-  subtopics: (_: State, getters: any) => (topicName: string) => {
-    const topic = getters["topics"].find(
-      (topic: Topic) => topic.i18nKey === topicName
+  subtopics: (state: State) => {
+    return state.subtopics;
+  },
+  subtopicsByTopic: (state: State) => (topicKey: string) => {
+    return state.subtopics.filter((subtopic) => subtopic.topicKey === topicKey);
+  },
+  articles: (state: State) => {
+    return state.articles;
+  },
+  articlesBySubtopic: (state: State) => (subtopicKey: string) => {
+    return state.articles.filter(
+      (article) => article.subtopicKey === subtopicKey
     );
-    return topic?.subtopics;
   },
-  articles: (_: State, getters: any) => {
-    const subtopics: Subtopic[] = getters["subtopics"];
-    return subtopics.map((subtopic: Subtopic) => subtopic.articles);
+  literature: (state: State) => {
+    return state.literature;
   },
-  literature: (_: State, getters: any) => {
-    const subtopics: Subtopic[] = getters["subtopics"];
-    return subtopics.map((subtopic: Subtopic) => subtopic.literature);
+  literatureBySubtopic: (state: State) => (subtopicKey: string) => {
+    return state.literature.filter(
+      (literature) => literature.subtopicKey === subtopicKey
+    );
   },
-  studies: (_: State, getters: any) => {
-    const subtopics: Subtopic[] = getters["subtopics"];
-    return subtopics.map((subtopic: Subtopic) => subtopic.studies);
+  studies: (state: State) => {
+    return state.studies;
   },
-  videos: (_: State, getters: any) => {
-    const subtopics: Subtopic[] = getters["subtopics"];
-    return subtopics.map((subtopic: Subtopic) => subtopic.videos);
+  studiesBySubtopic: (state: State) => (subtopicKey: string) => {
+    return state.studies.filter((study) => study.subtopicKey === subtopicKey);
+  },
+  videos: (state: State) => {
+    return state.videos;
+  },
+  videosBySubtopic: (state: State) => (subtopicKey: string) => {
+    return state.videos.filter((video) => video.subtopicKey === subtopicKey);
   },
   tags: (state: State) => {
     return state.tags;
   },
   tagsByKeys: (state: State) => (tagKeys: string[]) => {
     return state.tags.filter((tag) => tagKeys.includes(tag.i18nKey));
+  },
+  externalResources: (state: State) => {
+    return state.externalResources;
+  },
+  externalResourcesBySubtopic: (state: State) => (subtopicKey: string) => {
+    return state.externalResources.filter(
+      (externalResource) => externalResource.subtopicKey === subtopicKey
+    );
   },
 };

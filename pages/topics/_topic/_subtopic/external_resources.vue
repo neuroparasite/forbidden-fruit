@@ -9,7 +9,7 @@
     />
 
     <FExternalResource
-      v-for="externalResource in currentSubtopic.externalResources"
+      v-for="externalResource in externalResources"
       :key="externalResource.i18nKey"
       :externalResource="externalResource"
       :i18nKeyTopic="currentTopic.i18nKey"
@@ -24,36 +24,46 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
-import Link from "~/components/Link.vue";
+import FLink from "~/components/FLink.vue";
 import FHeader from "~/components/FHeader.vue";
 import NavBar from "~/components/NavBar.vue";
 import FArticle from "~/components/FArticle.vue";
 import FFade from "~/components/transitions/FFade.vue";
 import FExternalResource from "~/components/FExternalResource.vue";
 
-import { Subtopic } from "~/types";
+import { Subtopic, Topic, ExternalResource } from "~/types";
 
 @Component({
   components: {
     FHeader,
-    Link,
+    FLink,
     NavBar,
     FArticle,
     FFade,
     FExternalResource,
   },
-  computed: {
-    ...mapGetters(["currentTopic", "currentSubtopic"]),
-  },
   validate({ params, store }: any) {
-    return !!store.getters["subtopics"](params.topic).find(
+    return !!store.getters["subtopics"].find(
       (s: Subtopic) => s.i18nKey === params.subtopic
     );
   },
 })
 export default class SubtopicPage extends Vue {
+  get currentTopic(): Topic {
+    return this.$store.getters["currentTopic"];
+  }
+
+  get currentSubtopic(): Subtopic {
+    return this.$store.getters["currentSubtopic"];
+  }
+
+  get externalResources(): ExternalResource[] {
+    return this.$store.getters["externalResourcesBySubtopic"](
+      this.currentSubtopic.i18nKey
+    );
+  }
+
   beforeMount() {
     this.$store.commit("setCurrentTopic", this.$route.params.topic);
     this.$store.commit("setCurrentSubtopic", this.$route.params.subtopic);

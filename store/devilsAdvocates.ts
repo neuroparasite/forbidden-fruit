@@ -1,5 +1,7 @@
-import devils_advocates from "~/static/data/devils_advocates.json";
+import devils_advocates from "~/static/data/devilsAdvocates.json";
 import { DevilsAdvocate, Article, Literature, Study, Video } from "~/types";
+import { GetterTree, MutationTree } from "vuex";
+import { RootState } from "~/store";
 
 interface State {
   list: DevilsAdvocate[];
@@ -11,13 +13,15 @@ export const state = (): State => ({
   current: undefined,
 });
 
-export const mutations = {
+export type DevilsAdvocatesState = ReturnType<typeof state>;
+
+export const mutations: MutationTree<DevilsAdvocatesState> = {
   setCurrent(state: State, i18nKey: string) {
     state.current = state.list.find((d) => d.i18nKey === i18nKey);
   },
 };
 
-export const getters = {
+export const getters: GetterTree<DevilsAdvocatesState, RootState> = {
   list: (state: State) => {
     return state.list;
   },
@@ -29,27 +33,31 @@ export const getters = {
       tagKeys.includes(devilsAdvocate.i18nKey)
     );
   },
-  hasArticles: (_: State, getters: any) => (devilsAdvocateKey: string) => {
-    const articles: Article[] = getters["articles"];
-    return !!articles.find((article) =>
+  hasArticles: (_: State, __: any, rootState: RootState) => (
+    devilsAdvocateKey: string
+  ) => {
+    return !!rootState.articles.find((article) =>
       article.devilsAdvocateKeys?.includes(devilsAdvocateKey)
     );
   },
-  hasLiterature: (_: State, getters: any) => (devilsAdvocateKey: string) => {
-    const literature: Literature[] = getters["literature"];
-    return !!literature.find((lit) =>
+  hasLiterature: (_: State, __: any, rootState: RootState) => (
+    devilsAdvocateKey: string
+  ) => {
+    return !!rootState.literature.find((lit) =>
       lit.devilsAdvocateKeys?.includes(devilsAdvocateKey)
     );
   },
-  hasStudies: (_: State, getters: any) => (devilsAdvocateKey: string) => {
-    const studies: Study[] = getters["studies"];
-    return !!studies.find((study) =>
+  hasStudies: (_: State, __: any, rootState: RootState) => (
+    devilsAdvocateKey: string
+  ) => {
+    return !!rootState.studies.find((study) =>
       study.devilsAdvocateKeys?.includes(devilsAdvocateKey)
     );
   },
-  hasVideos: (_: State, getters: any) => (devilsAdvocateKey: string) => {
-    const videos: Video[] = getters["videos"];
-    return !!videos.find((video) =>
+  hasVideos: (_: State, __: any, rootState: RootState) => (
+    devilsAdvocateKey: string
+  ) => {
+    return !!rootState.videos.find((video) =>
       video.devilsAdvocateKeys?.includes(devilsAdvocateKey)
     );
   },

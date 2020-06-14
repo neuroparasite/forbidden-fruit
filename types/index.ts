@@ -24,61 +24,43 @@ export interface SocialMedia {
 export interface Topic {
   id: string;
   i18nKey: string;
-  subtopics: Subtopic[];
 }
 
 export interface Subtopic {
   id: string;
+  topicKey: string;
   i18nKey: string;
-  articles?: Article[];
-  literature?: Literature[];
-  studies?: Study[];
-  videos?: Video[];
-  externalResources: ExternalResource[];
   wikipediaLink?: boolean;
 }
 
-export interface Article {
+interface Resource {
+  subtopicKey: string;
   title: string;
   i18nKey: string;
   year: number;
   tagKeys: string[];
-  source: string;
   devilsAdvocateKeys?: string[];
   authors?: string[];
 }
 
-export interface Literature {
-  title: string;
-  i18nKey: string;
-  year: number;
-  tagKeys: string[];
+export interface Article extends Resource {
+  source: string;
+}
+
+export interface Literature extends Resource {
   purchaseLink: boolean;
-  devilsAdvocateKeys?: string[];
-  authors?: string[];
 }
 
-export interface Study {
-  title: string;
-  i18nKey: string;
-  year: number;
-  tagKeys: string[];
+export interface Study extends Resource {
   source: string;
-  devilsAdvocateKeys?: string[];
-  authors?: string[];
 }
 
-export interface Video {
-  title: string;
-  i18nKey: string;
-  year: number;
-  tagKeys: string[];
+export interface Video extends Resource {
   embedUrl: string;
-  devilsAdvocateKeys?: string[];
-  authors?: string[];
 }
 
 export interface ExternalResource {
+  subtopicKey: string;
   i18nKey: string;
   tagKeys: string[];
   source: string;

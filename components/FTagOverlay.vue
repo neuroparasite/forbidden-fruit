@@ -47,23 +47,23 @@ import "reflect-metadata";
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { mapGetters } from "vuex";
 
 import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import FFade from "~/components/transitions/FFade.vue";
 
-import { Subtopic } from "~/types";
+import { Tag } from "~/types";
 
 @Component({
   components: {
     FWikipediaLink,
     FFade,
   },
-  computed: {
-    ...mapGetters(["currentTag"]),
-  },
 })
 export default class FTagOverlay extends Vue {
+  get currentTag(): Tag {
+    return this.$store.getters["currentTag"];
+  }
+
   hideTagOverlay() {
     this.$store.commit("unsetCurrentTag");
   }

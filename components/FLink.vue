@@ -22,7 +22,7 @@ import Icon from "~/components/Icon.vue";
     Icon,
   },
 })
-export default class Link extends Vue {
+export default class FLink extends Vue {
   @Prop({ required: true })
   link!: string;
 
