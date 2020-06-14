@@ -10,6 +10,7 @@ export interface DevilsAdvocate {
   homepage: string;
   imageLink: string;
   tagKeys: string[];
+  topicKeys: string[];
   socialMedia?: SocialMedia;
 }
 

@@ -33,6 +33,13 @@ export const getters: GetterTree<DevilsAdvocatesState, RootState> = {
       tagKeys.includes(devilsAdvocate.i18nKey)
     );
   },
+  byTopic: (state: State) => (topicKey: string) => {
+    return state.list.filter((devilsAdvocate) =>
+      devilsAdvocate.topicKeys
+        ? devilsAdvocate.topicKeys.includes(topicKey)
+        : []
+    );
+  },
   hasArticles: (_: State, __: any, rootState: RootState) => (
     devilsAdvocateKey: string
   ) => {

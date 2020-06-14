@@ -45,7 +45,9 @@ export default class DevilsAdvocatesPage extends Vue {
   }
 
   get devilsAdvocates(): DevilsAdvocate[] {
-    return this.$store.getters["devilsAdvocates/list"];
+    return this.$store.getters["devilsAdvocates/byTopic"](
+      this.currentTopic.i18nKey
+    );
   }
 
   beforeMount() {
