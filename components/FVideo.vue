@@ -58,7 +58,7 @@ export default class FVideo extends Vue {
   public video!: Video;
 
   get videoURL(): string {
-    return `https://forbidden-fruit.now.sh${this.$route.path}#${this.video.i18nKey}`;
+    return `${process.env.baseURL}${this.$route.path}#${this.video.i18nKey}`;
   }
 
   get tagsByKeys(): Tag {

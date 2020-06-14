@@ -52,7 +52,7 @@ export default class FArticle extends Vue {
   public article!: Article;
 
   get articleURL(): string {
-    return `https://forbidden-fruit.now.sh${this.$route.path}#${this.article.i18nKey}`;
+    return `${process.env.baseURL}${this.$route.path}#${this.article.i18nKey}`;
   }
 
   get tagsByKeys(): Tag {
