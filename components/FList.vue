@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-12">{{ $t(text) }}:</div>
+    <div v-if="text" class="mb-12">{{ $t(text) }}:</div>
 
     <div
       v-for="point in points"
@@ -8,7 +8,10 @@
       class="flex justify-top ml-8 mb-12"
     >
       <div class="mr-8">×</div>
-      <div>{{ $t(point) }}</div>
+      <div>
+        <span v-if="prefix" class="font-black uppercase">{{ $t(prefix) }}</span>
+        <span>{{ $t(point) }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -26,14 +29,17 @@ import Icon from "~/components/Icon.vue";
     Icon,
   },
 })
-export default class List extends Vue {
+export default class FList extends Vue {
   pathHovered = false;
 
-  @Prop({ required: true })
+  @Prop()
   text!: string;
 
   @Prop({ required: true })
   points!: string[];
+
+  @Prop()
+  prefix!: string;
 }
 </script>
 
