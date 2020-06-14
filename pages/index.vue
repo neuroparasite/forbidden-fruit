@@ -19,8 +19,8 @@
       <div
         class="flex items-center justify-center mt-128 text-24 text-secondary font-black tracking-tighter leading-none w-fruit h-fruit rounded-full bg-secondary"
       >
-        <nuxt-link class="w-fruitText underline" to="/discover">{{
-          $t("home.discover")
+        <nuxt-link class="w-fruitText underline" to="/topics">{{
+          $t("home.fruitText")
         }}</nuxt-link>
       </div>
 
@@ -37,7 +37,7 @@
         <div class="flex flex-col px-64">
           <div class="mb-24">{{ $t("info.description") }}</div>
 
-          <List :text="listText" :points="listPoints" />
+          <FList :points="listPoints" prefix="emphasis.fuck" />
         </div>
       </div>
     </div>
@@ -59,22 +59,21 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import Icon from "~/components/Icon.vue";
-import List from "~/components/List.vue";
+import FList from "~/components/FList.vue";
 import ScrollDownIndicator from "~/components/ScrollDownIndicator.vue";
 
 @Component({
   components: {
     Icon,
-    List,
+    FList,
     ScrollDownIndicator,
   },
 })
 export default class HomePage extends Vue {
-  listText = "info.listText";
   listPoints = [
-    "info.listPoints.resources",
-    "info.listPoints.individuals",
-    "info.listPoints.knowledge",
+    "info.listPoints.politicalCorrectness",
+    "info.listPoints.feminism",
+    "info.listPoints.fakeNews",
   ];
 
   beforeMount() {
