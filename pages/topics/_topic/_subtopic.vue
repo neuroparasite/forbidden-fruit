@@ -2,5 +2,4 @@
   <nuxt-child />
 </template>
 
-<script>
-</script>
+<script></script>
