@@ -66,7 +66,7 @@ export default class FVideo extends Vue {
   }
 
   get devilsAdvocatesByKeys(): Tag {
-    return this.$store.getters["devilsAdvocatesByKeys"](
+    return this.$store.getters["devilsAdvocates/byKeys"](
       this.video.devilsAdvocateKeys
     );
   }

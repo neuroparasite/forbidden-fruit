@@ -60,7 +60,7 @@ export default class FArticle extends Vue {
   }
 
   get devilsAdvocatesByKeys(): Tag {
-    return this.$store.getters["devilsAdvocatesByKeys"](
+    return this.$store.getters["devilsAdvocates/byKeys"](
       this.article.devilsAdvocateKeys
     );
   }

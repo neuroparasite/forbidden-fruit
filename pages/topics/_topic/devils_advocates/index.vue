@@ -45,7 +45,7 @@ import { Topic, DevilsAdvocate } from "~/types";
 })
 export default class DevilsAdvocatesPage extends Vue {
   get devilsAdvocates(): DevilsAdvocate[] {
-    return this.$store.getters["devilsAdvocate/list"];
+    return this.$store.getters["devilsAdvocates/list"];
   }
 
   beforeMount() {

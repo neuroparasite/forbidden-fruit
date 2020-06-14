@@ -24,7 +24,7 @@ export const getters = {
   current: (state: State) => {
     return state.current;
   },
-  devilsAdvocatesByKeys: (state: State) => (tagKeys: string[]) => {
+  byKeys: (state: State) => (tagKeys: string[]) => {
     return state.list.filter((devilsAdvocate) =>
       tagKeys.includes(devilsAdvocate.i18nKey)
     );
