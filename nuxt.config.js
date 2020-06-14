@@ -77,21 +77,20 @@ export default {
             quote:
               "“Give me the storm and tempest of thought and action, rather than the dead calm of ignorance and faith”",
             quoteSource: "Robert G. Ingersoll",
-            discover: "TAKE THE FRUIT",
+            fruitText: "TAKE THE FRUIT",
           },
           info: {
             description:
-              "Take refuge in this desolate place of reason, science, facts, and forbidden thoughts.",
-            listText: "Enjoy a curated collection of",
+              "Take refuge in this desolate place of reason, science, and forbidden thoughts.",
             listPoints: {
-              resources:
-                "thought-provoking resources about politically-incorrect topics",
-              individuals: "awe-inspiring individuals",
-              knowledge: "links to places of knowledge",
+              politicalCorrectness: "political correctness",
+              feminism: "feminism",
+              fakeNews: "fake news",
             },
           },
           topics: {
             title: "Topics",
+            subtopics: "Subtopics",
             gender: {
               title: "Gender",
               gynocentrism: {
@@ -103,7 +102,7 @@ export default {
                   gynocentrismAndItsCulturalOrigins: {
                     title: "Gynocentrism and its Cultural Origins",
                     description:
-                      "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man.",
+                      "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man. Additionally, the origins of chivalry and romantic love are examined in great detail.",
                   },
                 },
               },
@@ -125,37 +124,71 @@ export default {
             },
           },
           tags: {
-            unverified: {
-              title: "Unverified",
+            biopsychosocial: {
+              title: "Biopsychosocial",
               description: "a",
+              wikipediaLink:
+                "https://en.wikipedia.org/wiki/Biopsychosocial_model",
             },
             scientificallyProven: {
               title: "Scientifically Proven",
-              description: "b",
+              description:
+                "The source adheres to the standards of the scientific community by deriving the claims made from applying the scientific method.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
             },
             anecdotalEvidence: {
               title: "Anecdotal Evidence",
-              description: "c",
+              description:
+                "The source may contain anecdotal evidence. It is advised to check whether the scientific method was applied for each claim made in the source. Regardless of whether a claim is scientifically proven, it may still hold some truth.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
+            },
+            mensRights: {
+              title: "Men's Rights",
+              description:
+                "Contrary to mainstream belief, the men's rights movement is not the male equivalent to the modern feminism movement. In a literal sense, the term merely encompasses proponents of men's rights.",
+              wikipediaLink:
+                "https://en.wikipedia.org/wiki/Men's_rights_movement",
             },
           },
           devilsAdvocates: {
             title: "Devil's Advocates",
+            paulElam: {
+              description: "a",
+              background: "b",
+            },
           },
           externalResources: {
             title: "External Resources",
+          },
+          articles: {
+            title: "Articles",
+          },
+          literature: {
+            title: "Literature",
+          },
+          studies: {
+            title: "Studies",
+          },
+          videos: {
+            title: "Videos",
           },
           scroll: {
             down: "Scroll Down",
           },
           paypal: "paypal.me/xxx",
+          emphasis: {
+            fuck: "fuck",
+          },
+          general: {
+            toc: "Table Of Contents",
+          },
           ui: {
             back: "Back",
             goToTop: "Go To Top",
             copyLink: "Copy Link",
             source: "Source",
             close: "Close",
+            learnMore: "Learn More",
           },
         },
       },
