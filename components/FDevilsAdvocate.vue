@@ -4,10 +4,10 @@
       <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
       <div class="flex flex-col text-32">
         <div>
-          {{ $t(`devilsAdvocates.${devilsAdvocate.i18nKey}.firstname`) }}
+          {{ devilsAdvocate.firstname }}
         </div>
         <div class="font-bold">
-          {{ $t(`devilsAdvocates.${devilsAdvocate.i18nKey}.lastname`) }}
+          {{ devilsAdvocate.lastname }}
         </div>
       </div>
     </div>
