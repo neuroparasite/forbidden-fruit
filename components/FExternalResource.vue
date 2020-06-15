@@ -1,19 +1,11 @@
 <template>
   <div class="flex flex-col p-16 bg-primary-light">
     <div class="font-medium text-18 mb-16">
-      {{
-        $t(
-          `topics.${i18nKeyTopic}.${i18nKeySubtopic}.externalResources.${externalResource.i18nKey}.title`
-        )
-      }}
+      {{ $t(`externalResources.${externalResource.i18nKey}.title`) }}
     </div>
 
     <div class="mb-16">
-      {{
-        $t(
-          `topics.${i18nKeyTopic}.${i18nKeySubtopic}.externalResources.${externalResource.i18nKey}.description`
-        )
-      }}
+      {{ $t(`externalResources.${externalResource.i18nKey}.description`) }}
     </div>
 
     <div v-if="tagsByKeys" class="grid grid-cols-3 gap-16 mb-16">

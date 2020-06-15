@@ -4,32 +4,22 @@
 
     <FHeader
       :title="`topics.${currentTopic.i18nKey}.title`"
-      :subtitle="
-        `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.title`
-      "
+      :subtitle="`subtopics.${currentSubtopic.i18nKey}.title`"
       class="mb-24"
     />
 
     <div class="flex items-start mx-32 mb-24">
       <div class="mr-12">
-        {{
-          $t(
-            `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.description`
-          )
-        }}
+        {{ $t(`subtopics.${currentSubtopic.i18nKey}.description`) }}
       </div>
 
       <FWikipediaLink
-        :i18nKey="
-          `topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.wikipediaLink`
-        "
+        :i18nKey="`subtopics.${currentSubtopic.i18nKey}.wikipediaLink`"
       />
     </div>
 
     <FLink
-      :link="
-        `/topics/${currentTopic.i18nKey}/${currentSubtopic.i18nKey}/external_resources`
-      "
+      :link="`${currentSubtopic.i18nKey}/external_resources`"
       label="externalResources.title"
       class="ml-32 mb-64"
     />

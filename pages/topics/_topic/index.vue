@@ -6,20 +6,20 @@
 
     <div class="flex flex-col justify-center mt-32 ml-32">
       <FLink
-        :link="`/topics/${currentTopic.i18nKey}/devils_advocates`"
+        :link="`${currentTopic.i18nKey}/devils_advocates`"
         label="devilsAdvocates.title"
         :disabled="!!!devilsAdvocates.length"
         class="ml-16"
       />
 
       <div v-if="!!subtopics.length">
-        <div class="text-24 mb-32">{{ $t("topics.subtopics") }}</div>
+        <div class="text-24 mb-32">{{ $t("subtopics.title") }}</div>
 
         <FLink
           v-for="subtopic in subtopics"
           :key="subtopic.id"
-          :link="`/topics/${currentTopic.i18nKey}/${subtopic.i18nKey}`"
-          :label="`topics.${currentTopic.i18nKey}.${subtopic.i18nKey}.title`"
+          :link="`${currentTopic.i18nKey}/${subtopic.i18nKey}`"
+          :label="`subtopics.${subtopic.i18nKey}.title`"
           class="ml-16"
         />
       </div>

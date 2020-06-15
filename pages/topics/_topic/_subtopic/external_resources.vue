@@ -3,7 +3,7 @@
     <NavBar />
 
     <FHeader
-      :title="`topics.${currentTopic.i18nKey}.${currentSubtopic.i18nKey}.title`"
+      :title="`subtopics.${currentSubtopic.i18nKey}.title`"
       subtitle="externalResources.title"
       class="mb-24"
     />

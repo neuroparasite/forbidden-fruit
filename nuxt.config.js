@@ -90,25 +90,8 @@ export default {
           },
           topics: {
             title: "Topics",
-            subtopics: "Subtopics",
             gender: {
               title: "Gender",
-              gynocentrism: {
-                title: "Gynocentrism",
-                description:
-                  "Contrary to mainstream belief, the modern human lives in a gynocentric society, not a patriarchal one. Some argue this stems from the fact that all primate societies are inherently gynocentric.",
-                wikipediaLink: "https://en.wikipedia.org/wiki/Gynocentrism",
-                externalResources: {
-                  gynocentrismAndItsCulturalOrigins: {
-                    title: "Gynocentrism and its Cultural Origins",
-                    description:
-                      "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man. Additionally, the origins of chivalry and romantic love are examined in great detail.",
-                  },
-                },
-              },
-              womenAndSexRoles: {
-                title: "Women and Sex Roles",
-              },
             },
             biology: {
               title: "Biology",
@@ -119,8 +102,25 @@ export default {
             diversity: {
               title: "Diversity",
             },
-            nwo: {
-              title: "New World Order",
+          },
+          subtopics: {
+            title: "Subtopics",
+            gynocentrism: {
+              title: "Gynocentrism",
+              description:
+                "Contrary to mainstream belief, the modern human lives in a gynocentric society, not a patriarchal one. Some argue this stems from the fact that all primate societies are inherently gynocentric.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Gynocentrism",
+            },
+            womenAndSexRoles: {
+              title: "Women and Sex Roles",
+            },
+          },
+          externalResources: {
+            title: "External Resources",
+            gynocentrismAndItsCulturalOrigins: {
+              title: "Gynocentrism and its Cultural Origins",
+              description:
+                "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man. Additionally, the origins of chivalry and romantic love are examined in great detail.",
             },
           },
           tags: {
@@ -159,9 +159,6 @@ export default {
               description: "a",
               background: "b",
             },
-          },
-          externalResources: {
-            title: "External Resources",
           },
           articles: {
             title: "Articles",
