@@ -1,3 +1,15 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+
+@tailwind components;
+
+.screen-container {
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply min-h-screen;
+  @apply max-w-512;
+  @apply min-w-360;
+  @apply m-auto;
+}
+
+@tailwind utilities;

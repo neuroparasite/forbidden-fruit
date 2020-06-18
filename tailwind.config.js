@@ -21,8 +21,12 @@ module.exports = {
         screen: "100vh",
       },
       maxHeight: {},
-      minWidth: {},
-      maxWidth: {},
+      minWidth: {
+        "360": "22.5rem",
+      },
+      maxWidth: {
+        "512": "32rem",
+      },
       boxShadow: {
         nice: "1.5rem 1.5rem 2.5rem -1rem",
       },
