@@ -1,72 +1,98 @@
 <template>
-  <div class="min-h-screen">
+  <div>
     <NavBar />
+    <div class="screen-container">
+      <div class="flex flex-col bg-primary-light p-24 w-full">
+        <div class="flex items-start">
+          <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
 
-    <div class="flex flex-col bg-primary-light p-24">
-      <div class="flex items-start">
-        <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
+          <div class="flex flex-col">
+            <div class="text-32">
+              {{ currentDevilsAdvocate.firstname }}
+            </div>
 
-        <div class="flex flex-col">
-          <div class="text-32">
-            {{ currentDevilsAdvocate.firstname }}
-          </div>
-
-          <div class="font-bold text-32">
-            {{ currentDevilsAdvocate.lastname }}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="flex justify-between items-center text-accent mt-32 mx-32">
-        <FCopyLinkButton :link="url" />
-
-        <FExternalLink
-          :link="currentDevilsAdvocate.homepage"
-          label="devilsAdvocates.homepage"
-        />
-      </div>
-
-      <div class="mt-32 ml-32">
-        <div v-if="!!currentDevilsAdvocate.socialMedia">
-          <div class="text-18">{{ $t("devilsAdvocates.socialMedia") }}</div>
-          <div class="ml-16 mb-24"></div>
-        </div>
-
-        <div class="text-18 mb-16">{{ $t("devilsAdvocates.works") }}</div>
-        <div class="flex ml-16">
-          <div class="mr-48">
-            <FLink
-              :link="`${currentDevilsAdvocate.i18nKey}/works#articles`"
-              label="articles.title"
-              :disabled="!hasArticles"
-            />
-            <FLink
-              :link="`${currentDevilsAdvocate.i18nKey}/works#literature`"
-              label="literature.title"
-              :disabled="!hasLiterature"
-            />
-          </div>
-
-          <div>
-            <FLink
-              :link="`${currentDevilsAdvocate.i18nKey}/works#studies`"
-              label="studies.title"
-              :disabled="!hasStudies"
-            />
-            <FLink
-              :link="`${currentDevilsAdvocate.i18nKey}/works#videos`"
-              label="videos.title"
-              :disabled="!hasVideos"
-            />
+            <div class="font-bold text-32">
+              {{ currentDevilsAdvocate.lastname }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="flex flex-col items-center">
-      <ScrollDownIndicator label="ui.learnMore" />
+      <div class="w-full">
+        <div class="flex justify-between items-center text-accent mt-32 mx-32">
+          <FCopyLinkButton :link="url" />
+
+          <FExternalLink
+            :link="currentDevilsAdvocate.homepage"
+            label="devilsAdvocates.homepage"
+          />
+        </div>
+
+        <div class="mt-32 ml-32">
+          <div v-if="!!currentDevilsAdvocate.socialMedia">
+            <div class="text-18 mb-8">
+              {{ $t("devilsAdvocates.socialMedia") }}
+            </div>
+            <div class="flex ml-16 mb-24">
+              <a
+                v-if="!!currentDevilsAdvocate.socialMedia.youtube"
+                :href="currentDevilsAdvocate.socialMedia.youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-8"
+                :class="{
+                  'mr-16': !!currentDevilsAdvocate.socialMedia.bitchute,
+                }"
+              >
+                <Icon class="h-32 w-32" type="youtube" />
+              </a>
+
+              <a
+                v-if="!!currentDevilsAdvocate.socialMedia.bitchute"
+                :href="currentDevilsAdvocate.socialMedia.bitchute"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center"
+              >
+                <img class="h-32 w-128" src="~/static/img/bitChute.png" />
+              </a>
+            </div>
+          </div>
+
+          <div class="text-18 mb-16">{{ $t("devilsAdvocates.works") }}</div>
+          <div class="flex ml-16">
+            <div class="mr-48">
+              <FLink
+                :link="`${currentDevilsAdvocate.i18nKey}/works#articles`"
+                label="articles.title"
+                :disabled="!hasArticles"
+              />
+              <FLink
+                :link="`${currentDevilsAdvocate.i18nKey}/works#literature`"
+                label="literature.title"
+                :disabled="!hasLiterature"
+              />
+            </div>
+
+            <div>
+              <FLink
+                :link="`${currentDevilsAdvocate.i18nKey}/works#studies`"
+                label="studies.title"
+                :disabled="!hasStudies"
+              />
+              <FLink
+                :link="`${currentDevilsAdvocate.i18nKey}/works#videos`"
+                label="videos.title"
+                :disabled="!hasVideos"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <ScrollDownIndicator label="ui.learnMore" />
+      </div>
     </div>
   </div>
 </template>
@@ -78,6 +104,7 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import FHeader from "~/components/FHeader.vue";
+import Icon from "~/components/Icon.vue";
 import NavBar from "~/components/NavBar.vue";
 import FCopyLinkButton from "~/components/FCopyLinkButton.vue";
 import FExternalLink from "~/components/FExternalLink.vue";
@@ -89,6 +116,7 @@ import { DevilsAdvocate, Tag, Topic } from "~/types";
 @Component({
   components: {
     FHeader,
+    Icon,
     NavBar,
     FCopyLinkButton,
     FExternalLink,
