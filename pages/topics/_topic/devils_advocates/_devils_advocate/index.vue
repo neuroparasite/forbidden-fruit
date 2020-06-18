@@ -90,9 +90,9 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-center">
+      <!-- <div class="flex flex-col items-center">
         <ScrollDownIndicator label="ui.learnMore" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
