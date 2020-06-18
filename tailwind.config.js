@@ -26,6 +26,7 @@ module.exports = {
       },
       maxWidth: {
         "512": "32rem",
+        "1024": "64rem",
       },
       boxShadow: {
         nice: "1.5rem 1.5rem 2.5rem -1rem",
