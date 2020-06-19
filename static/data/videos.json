@@ -5,7 +5,106 @@
     "i18nKey": "chasingTheDragon",
     "year": 2016,
     "embedUrl": "https://www.youtube-nocookie.com/embed/VygKQV-hEpY",
-    "tagKeys": ["biopsychosocial"],
+    "tagKeys": ["biopsychosocial", "opinionEvidence"],
     "devilsAdvocateKeys": ["paulElam"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "What Men Fear the Most",
+    "i18nKey": "whatMenFearTheMost",
+    "year": 2016,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/W35e_uPH6V4",
+    "tagKeys": ["anecdotalEvidence", "opinionEvidence"],
+    "devilsAdvocateKeys": ["paulElam"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Four Stages of Male Well-Being (Part 1)",
+    "i18nKey": "fourStagesOfMaleWellBeing",
+    "year": 2017,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/hugznY41L6A",
+    "tagKeys": ["anecdotalEvidence"],
+    "devilsAdvocateKeys": ["paulElam"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Sh*t Testing: The 90-Day Crossroads",
+    "i18nKey": "shitTestingThe90DayCrossroads",
+    "year": 2018,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Vs6tb0D9qfg",
+    "tagKeys": ["anecdotalEvidence"],
+    "devilsAdvocateKeys": ["paulElam"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Occam's Razor",
+    "i18nKey": "occamsRazor",
+    "year": 2017,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/ITolYeDyKWw",
+    "tagKeys": ["anecdotalEvidence", "opinionEvidence"],
+    "devilsAdvocateKeys": ["colttaine"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Equal Contribution",
+    "i18nKey": "equalContribution",
+    "year": 2018,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/j9Yn3i-DMKw",
+    "tagKeys": ["anecdotalEvidence", "opinionEvidence"],
+    "devilsAdvocateKeys": ["colttaine"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "The Post-feminism Man",
+    "i18nKey": "thePostFeminismMan",
+    "year": 2010,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dyenSX4XSZA",
+    "tagKeys": ["opinionEvidence"],
+    "devilsAdvocateKeys": ["barbarossa"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "flawed male desire leads to traditional parasitism",
+    "i18nKey": "flawedMaleDesireLeadsToTraditionalParasitism",
+    "year": 2011,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/ySMVtRmQl1Y",
+    "tagKeys": ["opinionEvidence"],
+    "devilsAdvocateKeys": ["barbarossa"]
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Stop arguing with women. time to examine our own behavior",
+    "i18nKey": "stopArguingWithWomenTimeToExamineOurOwnBehaviour",
+    "year": 2011,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/JhZDMUyv_4A",
+    "tagKeys": ["opinionEvidence"],
+    "devilsAdvocateKeys": ["barbarossa"]
+  },
+  {
+    "subtopicKey": "feminism",
+    "title": "Direct evidence that feminists HATE facts",
+    "i18nKey": "directEvidenceThatFeministsHateFacts",
+    "year": 2012,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YTOFXLl7eh4",
+    "tagKeys": [],
+    "devilsAdvocateKeys": []
+  },
+  {
+    "subtopicKey": "freedomOfExpression",
+    "title": "The Queen's University Talk: The Rising Tide of Compelled Speech",
+    "i18nKey": "theQueensUniversityTalkTheRisingTideOfCompelledSpeech",
+    "year": 2018,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/MwdYpMS8s28",
+    "tagKeys": [],
+    "devilsAdvocateKeys": ["jordanPeterson"]
+  },
+  {
+    "subtopicKey": "blacks",
+    "title": "The Science Of Racism DEBUNKED",
+    "i18nKey": "theScienceOfRacismDebunked",
+    "year": 2018,
+    "embedUrl": "https://www.youtube-nocookie.com/embed/B44fEWCR418",
+    "tagKeys": ["scientificEvidence"],
+    "devilsAdvocateKeys": []
   }
 ]

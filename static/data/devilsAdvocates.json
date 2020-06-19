@@ -4,11 +4,54 @@
     "lastname": "Elam",
     "i18nKey": "paulElam",
     "homepage": "https://www.paulelam.com",
-    "imageLink": "ohyeahthisisimage",
     "tagKeys": ["mensRights"],
     "topicKeys": ["gender"],
     "socialMedia": {
       "youtube": "https://www.youtube.com/channel/UCXNNG0ej_6rU9SxCZ4dyq6w"
+    }
+  },
+  {
+    "firstname": "Colttaine",
+    "lastname": "",
+    "i18nKey": "colttaine",
+    "homepage": "https://www.youtube.com/channel/UCX1GkAJdz_WF5Vyc2xUxZZw",
+    "tagKeys": ["mensRights"],
+    "topicKeys": ["gender"],
+    "socialMedia": {
+      "youtube": "https://www.youtube.com/channel/UCX1GkAJdz_WF5Vyc2xUxZZw"
+    }
+  },
+  {
+    "firstname": "Barbarossa",
+    "lastname": "",
+    "i18nKey": "barbarossa",
+    "homepage": "https://www.youtube.com/channel/UCDoNFQZqQpd6aL32Ua4JPTQ",
+    "tagKeys": ["mensRights"],
+    "topicKeys": ["gender"],
+    "socialMedia": {
+      "youtube": "https://www.youtube.com/channel/UCDoNFQZqQpd6aL32Ua4JPTQ"
+    }
+  },
+  {
+    "firstname": "Turd Flinging Monkey",
+    "lastname": "",
+    "i18nKey": "turdFlingingMonkey",
+    "homepage": "https://www.bitchute.com/channel/turdflingingmonkey/",
+    "tagKeys": ["mensRights"],
+    "topicKeys": ["gender"],
+    "socialMedia": {
+      "bitchute": "https://www.bitchute.com/channel/turdflingingmonkey/"
+    }
+  },
+  {
+    "firstname": "Jordan B.",
+    "lastname": "Peterson",
+    "i18nKey": "jordanPeterson",
+    "homepage": "https://www.jordanbpeterson.com",
+    "tagKeys": [],
+    "topicKeys": ["humanRights"],
+    "socialMedia": {
+      "youtube": "https://www.youtube.com/user/JordanPetersonVideos"
     }
   }
 ]

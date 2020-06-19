@@ -4,7 +4,7 @@
     "wikipediaLink": true
   },
   {
-    "i18nKey": "scientificallyProven",
+    "i18nKey": "scientificEvidence",
     "wikipediaLink": true
   },
   {
@@ -13,6 +13,14 @@
   },
   {
     "i18nKey": "mensRights",
+    "wikipediaLink": true
+  },
+  {
+    "i18nKey": "opinionEvidence",
+    "wikipediaLink": true
+  },
+  {
+    "i18nKey": "hypocrisy",
     "wikipediaLink": true
   }
 ]

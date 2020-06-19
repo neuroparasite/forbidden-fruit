@@ -1,7 +1,8 @@
 [
   {
     "id": "0",
-    "i18nKey": "gender"
+    "i18nKey": "gender",
+    "wikipediaLink": true
   },
   {
     "id": "1",
@@ -14,5 +15,15 @@
   {
     "id": "3",
     "i18nKey": "diversity"
+  },
+  {
+    "id": "4",
+    "i18nKey": "humanRights",
+    "wikipediaLink": true
+  },
+  {
+    "id": "5",
+    "i18nKey": "race",
+    "wikipediaLink": true
   }
 ]

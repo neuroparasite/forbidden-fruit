@@ -8,7 +8,6 @@ export interface DevilsAdvocate {
   lastname: string;
   i18nKey: string;
   homepage: string;
-  imageLink: string;
   tagKeys: string[];
   topicKeys: string[];
   socialMedia?: SocialMedia;
@@ -25,6 +24,7 @@ export interface SocialMedia {
 export interface Topic {
   id: string;
   i18nKey: string;
+  wikipediaLink?: boolean;
 }
 
 export interface Subtopic {

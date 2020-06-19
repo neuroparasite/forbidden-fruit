@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "The gynocentric mob and female superiority",
+    "i18nKey": "theGynocentricMobAndFemaleSuperiority",
+    "year": 2019,
+    "source": "https://avoiceformen.com/gynocentrism/the-gynocentric-mob-and-female-superiority/",
+    "tagKeys": ["anecdotalEvidence", "scientificEvidence"],
+    "devilsAdvocateKeys": []
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "The Normalisation Of Gynocentrism",
+    "i18nKey": "theNormalisationOfGynocentrism",
+    "year": 2018,
+    "source": "https://avoiceformen.com/gynocentrism/the-normalisation-of-gynocentrism/",
+    "tagKeys": ["anecdotalEvidence", "scientificEvidence"],
+    "devilsAdvocateKeys": []
+  },
+  {
+    "subtopicKey": "gynocentrism",
+    "title": "Gynocentrism and the golden uterus",
+    "i18nKey": "gynocentrismAndTheGoldenUterus",
+    "year": 2019,
+    "source": "https://gynocentrism.com/2019/04/29/gynocentrism-and-the-golden-uterus-part-one/",
+    "tagKeys": ["anecdotalEvidence", "scientificEvidence"],
+    "devilsAdvocateKeys": []
+  },
+  {
+    "subtopicKey": "womenAndHypergamy",
+    "title": "Why So Many Women Cheat on Their Husbands",
+    "i18nKey": "whySoManyWomenCheatOnTheirHusbands",
+    "year": 2017,
+    "source": "https://www.thecut.com/2017/09/why-women-cheat-esther-perel-state-of-affairs.html",
+    "tagKeys": ["hypocrisy"],
+    "devilsAdvocateKeys": []
+  }
+]

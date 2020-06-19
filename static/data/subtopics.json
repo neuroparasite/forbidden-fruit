@@ -8,7 +8,31 @@
   {
     "id": "1",
     "topicKey": "gender",
-    "name": "womenAndSexRoles",
-    "i18nKey": "womenAndSexRoles"
+    "i18nKey": "womenAndHypergamy",
+    "wikipediaLink": false
+  },
+  {
+    "id": "2",
+    "topicKey": "gender",
+    "i18nKey": "menAndMensRights",
+    "wikipediaLink": false
+  },
+  {
+    "id": "3",
+    "topicKey": "gender",
+    "i18nKey": "feminism",
+    "wikipediaLink": false
+  },
+  {
+    "id": "4",
+    "topicKey": "humanRights",
+    "i18nKey": "freedomOfExpression",
+    "wikipediaLink": true
+  },
+  {
+    "id": "5",
+    "topicKey": "race",
+    "i18nKey": "blacks",
+    "wikipediaLink": true
   }
 ]

@@ -4,5 +4,11 @@
     "i18nKey": "gynocentrismAndItsCulturalOrigins",
     "tagKeys": ["anecdotalEvidence"],
     "source": "https://gynocentrism.com"
+  },
+  {
+    "subtopicKey": "menAndMensRights",
+    "i18nKey": "aVoiceForMen",
+    "tagKeys": ["anecdotalEvidence", "opinionEvidence"],
+    "source": "https://avoiceformen.com"
   }
 ]

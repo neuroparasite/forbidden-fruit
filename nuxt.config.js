@@ -91,7 +91,10 @@ export default {
           topics: {
             title: "Topics",
             gender: {
-              title: "Gender",
+              title: "Gender/Sex",
+              description:
+                "The terms sex and gender could originally be used synonymously. However, starting from the 1970s, feminists and other deniers of scientifically provable facts, have been using gender to describe a socially imposed construct of roles, based on a person's apparent sex.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Sex",
             },
             biology: {
               title: "Biology",
@@ -102,6 +105,19 @@ export default {
             diversity: {
               title: "Diversity",
             },
+            humanRights: {
+              title: "Human Rights",
+              description:
+                "Albeit all cultures - at least to some degree - share a specific set of values which are considered as human rights, there is no universal definition. This is simply impossible, as any definition of the term stems from humans and is thus, inherently biased.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Human_rights",
+            },
+            race: {
+              title: "Race",
+              description:
+                "Through shaming tactics and other societal pressures, anyone who dares mention the concept of race in relation to humans, is immediately discredited. Its biological validity is highly controversial, albeit it does not matter, as the term itself is but an informal rank below the level of subspecies and thus, by its very nature, open for interpretation.",
+              wikipediaLink:
+                "https://en.wikipedia.org/wiki/Race_(human_categorization)",
+            },
           },
           subtopics: {
             title: "Subtopics",
@@ -111,8 +127,31 @@ export default {
                 "Contrary to mainstream belief, the modern human lives in a gynocentric society, not a patriarchal one. Some argue this stems from the fact that all primate societies are inherently gynocentric.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Gynocentrism",
             },
-            womenAndSexRoles: {
-              title: "Women and Sex Roles",
+            womenAndHypergamy: {
+              title: "Women and Hypergamy",
+              description:
+                'Mentioning the hypergamous nature of women, their ability to "monkey-branch" onto another, more optimal provider whenever beneficial to their cause, has in recent times been disregarded as sexist. Nonetheless, its validity and unparalleled success as evolutionary trait goes unquestioned.',
+              wikipediaLink: "https://en.wikipedia.org/wiki/Hypergamy",
+            },
+            menAndMensRights: {
+              title: "Men and Men's Rights",
+              description: "",
+              wikipediaLink: "",
+            },
+            feminism: {
+              title: "Feminism",
+            },
+            freedomOfExpression: {
+              title: "Freedom Of Expression",
+              description:
+                "Freedom of expression is regarded as a universal human right. Many do not understand the vast implications of any infringements on it and actively police it by prohibiting unwanted single words, phrases, and gestures.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Freedom_of_speech",
+            },
+            blacks: {
+              title: "Blacks",
+              description:
+                'While many different peoples share a "black" skin color, the term is most commonly used to refer to those of African descent.',
+              wikipediaLink: "https://en.wikipedia.org/wiki/Black_people",
             },
           },
           externalResources: {
@@ -122,6 +161,11 @@ export default {
               description:
                 "This site offers a more thorough definition of gynocentrism, as well as insights into the supposed point of emergence as societal form and its implications for man. Additionally, the origins of chivalry and romantic love are examined in great detail.",
             },
+            aVoiceForMen: {
+              title: "A Voice For Men",
+              description:
+                "Paul Elam created this site, aiming to educate men and boys about gynocentric society and misandry to decrease the detrimental effects of the latter.",
+            },
           },
           tags: {
             biopsychosocial: {
@@ -130,10 +174,10 @@ export default {
               wikipediaLink:
                 "https://en.wikipedia.org/wiki/Biopsychosocial_model",
             },
-            scientificallyProven: {
+            scientificEvidence: {
               title: "Scientifically Proven",
               description:
-                "The source adheres to the standards of the scientific community by deriving the claims made from applying the scientific method.",
+                "The source may contain scientifc evidence, which adheres to the standards of the scientific community by deriving the claims made from applying the scientific method.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
             },
             anecdotalEvidence: {
@@ -148,6 +192,18 @@ export default {
                 "Contrary to mainstream belief, the men's rights movement is not the male equivalent to the modern feminism movement. In a literal sense, the term merely encompasses proponents of men's rights.",
               wikipediaLink:
                 "https://en.wikipedia.org/wiki/Men's_rights_movement",
+            },
+            opinionEvidence: {
+              title: "Opinion Evidence",
+              description:
+                "The source may contain opinion evidence. While opinions are inherently not scientific as they are subjective, they might still hold some truth, depending on the author's competence, knowledge, and wisdom.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Opinion_evidence",
+            },
+            hypocrisy: {
+              title: "Hypocrisy",
+              description:
+                "The source may contain hypocritical viewpoints. Whether the hypocrisy stems from any form of indoctrination and thus the author's inability to comprehend their own hypocrisy, is irrelevant. Any claim made should be questioned with a highly critical attitude.",
+              wikipediaLink: "https://en.wikipedia.org/wiki/Hypocrisy",
             },
           },
           devilsAdvocates: {
