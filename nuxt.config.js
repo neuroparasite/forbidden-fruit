@@ -170,7 +170,8 @@ export default {
           tags: {
             biopsychosocial: {
               title: "Biopsychosocial",
-              description: "a",
+              description:
+                "Claims made in the source may be derived using the biopsychosocial model, in which biological, psychological, and socio-environmental factors are taken into account.",
               wikipediaLink:
                 "https://en.wikipedia.org/wiki/Biopsychosocial_model",
             },
