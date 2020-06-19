@@ -141,7 +141,7 @@ export default {
             feminism: {
               title: "Feminism",
               description:
-                "Feminism is both women's and the elite's strongest weapon for controlling the masses and keeping them compliant. Equality of the sexes, from the very beginning of the movement, was but a subterfuge, even though due to indoctrination the vast majority of followers are unable to see this fact.",
+                "Feminism is both women's and the elite's strongest weapon for controlling the masses and keeping them compliant. Equality of the sexes, from the very beginning of the movement, was but a subterfuge, even though due to indoctrination its followers are unable to see this fact.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Feminism",
             },
             freedomOfExpression: {
