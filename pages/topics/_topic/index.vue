@@ -2,7 +2,18 @@
   <div class="min-h-screen">
     <NavBar />
 
-    <FHeader :title="`topics.${currentTopic.i18nKey}.title`" />
+    <FHeader :title="`topics.${currentTopic.i18nKey}.title`" class="mb-24" />
+
+    <div class="flex items-start mx-32 mb-24">
+      <div class="mr-12">
+        {{ $t(`topics.${currentTopic.i18nKey}.description`) }}
+      </div>
+
+      <FWikipediaLink
+        v-if="currentTopic.wikipediaLink"
+        :i18nKey="`topics.${currentTopic.i18nKey}.wikipediaLink`"
+      />
+    </div>
 
     <div class="flex flex-col justify-center mt-32 ml-32">
       <FLink
@@ -35,6 +46,7 @@ import { Prop } from "vue-property-decorator";
 
 import FLink from "~/components/FLink.vue";
 import FHeader from "~/components/FHeader.vue";
+import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import NavBar from "~/components/NavBar.vue";
 
 import { Topic, DevilsAdvocate, Subtopic } from "~/types";
@@ -43,6 +55,7 @@ import { Topic, DevilsAdvocate, Subtopic } from "~/types";
   components: {
     FHeader,
     FLink,
+    FWikipediaLink,
     NavBar,
   },
   validate({ params, store }: any) {
