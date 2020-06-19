@@ -175,7 +175,7 @@ export default {
                 "https://en.wikipedia.org/wiki/Biopsychosocial_model",
             },
             scientificEvidence: {
-              title: "Scientifically Proven",
+              title: "Scientific Evidence",
               description:
                 "The source may contain scientifc evidence, which adheres to the standards of the scientific community by deriving the claims made from applying the scientific method.",
               wikipediaLink: "https://en.wikipedia.org/wiki/Anecdotal_evidence",
