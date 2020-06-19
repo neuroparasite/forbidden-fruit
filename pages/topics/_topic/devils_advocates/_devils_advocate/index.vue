@@ -4,7 +4,14 @@
     <div class="screen-container">
       <div class="flex flex-col bg-primary-light p-24 w-full">
         <div class="flex items-start">
-          <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
+          <img
+            v-if="!!imageSrc"
+            :src="imageSrc"
+            height="100"
+            width="100"
+            class="mr-24"
+            alt=""
+          />
 
           <div class="flex flex-col">
             <div class="text-32">
@@ -163,7 +170,11 @@ export default class DevilsAdvocatesPage extends Vue {
   }
 
   get imageSrc(): string {
-    return require(`~/assets/img/${this.currentDevilsAdvocate.i18nKey}.jpg`);
+    let imageSrc = "";
+    try {
+      imageSrc = require(`~/assets/img/${this.currentDevilsAdvocate.i18nKey}.jpg`);
+    } catch (exception) {}
+    return imageSrc;
   }
 
   get tagsByKeys(): Tag {

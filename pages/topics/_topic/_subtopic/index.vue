@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen w-screen">
     <NavBar />
+    <FTagOverlay />
 
     <FHeader
       :title="`topics.${currentTopic.i18nKey}.title`"
@@ -14,12 +15,14 @@
       </div>
 
       <FWikipediaLink
+        v-if="currentSubtopic.wikipediaLink"
         :i18nKey="`subtopics.${currentSubtopic.i18nKey}.wikipediaLink`"
       />
     </div>
 
     <FLink
       :link="`${currentSubtopic.i18nKey}/external_resources`"
+      :disabled="!hasExternalResources"
       label="externalResources.title"
       class="ml-32 mb-64"
     />
@@ -38,7 +41,7 @@
       />
     </div>
 
-    <div id="articles" v-if="articles.length" class="mb-16">
+    <div id="articles" v-if="articles.length" class="mb-64 last:mb-0">
       <div class="text-24 ml-32 mb-16">{{ $t("articles.title") }}</div>
       <FArticle
         v-for="article in articles"
@@ -48,7 +51,7 @@
       />
     </div>
 
-    <div id="videos" v-if="videos.length">
+    <div id="videos" v-if="videos.length" class="mb-64 last:mb-0">
       <div class="text-24 ml-32 mb-16">{{ $t("videos.title") }}</div>
       <FVideo
         v-for="video in videos"
@@ -57,8 +60,6 @@
         class="mb-8 last:mb-0"
       />
     </div>
-
-    <FTagOverlay />
   </div>
 </template>
 
@@ -78,7 +79,14 @@ import FWikipediaLink from "~/components/FWikipediaLink.vue";
 import FFade from "~/components/transitions/FFade.vue";
 import Icon from "~/components/Icon.vue";
 
-import { Subtopic, Topic, Tag, Article, Video } from "~/types";
+import {
+  Subtopic,
+  Topic,
+  Tag,
+  Article,
+  Video,
+  ExternalResource,
+} from "~/types";
 
 @Component({
   components: {
@@ -119,6 +127,16 @@ export default class SubtopicPage extends Vue {
   get videos(): Video[] {
     return this.$store.getters["videosBySubtopic"](
       this.currentSubtopic.i18nKey
+    );
+  }
+
+  get hasExternalResources(): boolean {
+    const externalResources: ExternalResource[] = this.$store.getters[
+      "externalResources"
+    ];
+    return !!externalResources.find(
+      (externalResource) =>
+        externalResource.subtopicKey === this.currentSubtopic.i18nKey
     );
   }
 

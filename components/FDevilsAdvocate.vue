@@ -1,7 +1,15 @@
 <template>
   <div class="flex flex-col p-16 bg-primary-light mb-8 last:mb-0">
     <div class="flex items-center mb-16">
-      <img :src="imageSrc" height="100" width="100" class="mr-24" alt="" />
+      <img
+        v-if="!!imageSrc"
+        :src="imageSrc"
+        height="100"
+        width="100"
+        class="mr-24"
+        alt=""
+      />
+
       <div class="flex flex-col text-32">
         <div>
           {{ devilsAdvocate.firstname }}
@@ -53,7 +61,11 @@ export default class FExternalResource extends Vue {
   public devilsAdvocate!: DevilsAdvocate;
 
   get imageSrc(): string {
-    return require(`~/assets/img/${this.devilsAdvocate.i18nKey}.jpg`);
+    let imageSrc = "";
+    try {
+      imageSrc = require(`~/assets/img/${this.devilsAdvocate.i18nKey}.jpg`);
+    } catch (exception) {}
+    return imageSrc;
   }
 
   get tagsByKeys(): Tag {
