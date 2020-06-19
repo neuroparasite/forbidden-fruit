@@ -17,7 +17,7 @@
 
     <div class="font-medium text-18 mb-16">{{ article.title }}</div>
 
-    <div class="grid grid-cols-3 gap-16 mb-16">
+    <div class="tag-grid">
       <FTag v-for="tag in tagsByKeys" :key="tag.i18nKey" :tag="tag" />
     </div>
 

@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div v-if="tagsByKeys" class="grid grid-cols-3 gap-16 mb-16">
+    <div v-if="tagsByKeys" class="tag-grid">
       <FTag v-for="tag in tagsByKeys" :key="tag.i18nKey" :tag="tag" />
     </div>
 

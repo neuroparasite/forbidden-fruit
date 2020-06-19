@@ -12,4 +12,12 @@
   @apply m-auto;
 }
 
+.tag-grid {
+  @apply grid;
+  @apply grid-cols-3;
+  @apply gap-16;
+  @apply mb-16;
+  overflow-wrap: anywhere;
+}
+
 @tailwind utilities;
