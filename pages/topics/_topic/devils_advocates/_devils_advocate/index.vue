@@ -61,7 +61,7 @@
                 rel="noopener noreferrer"
                 class="flex items-center"
               >
-                <img class="h-32 w-128" src="~/static/img/bitChute.png" />
+                <img class="h-32 w-128" src="~/static/img/BitChute.png" />
               </a>
             </div>
           </div>
